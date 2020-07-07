@@ -2645,6 +2645,12 @@ export interface DoLoginRequest {
      * @memberof DoLoginRequest
      */
     Password?: string;
+    /**
+     * Increase session expiry beyond default of 1 hour
+     * @type {boolean}
+     * @memberof DoLoginRequest
+     */
+    RememberMe?: boolean;
 }
 /**
  * A Response object containing important information that can be used after the user has logged in
