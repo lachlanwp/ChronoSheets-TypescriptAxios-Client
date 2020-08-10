@@ -455,6 +455,51 @@ export enum ApiResponseFleetVehicleStatusEnum {
 /**
  * A paginated API repsonse
  * @export
+ * @interface ApiResponseForPaginatedListBasicGeofence
+ */
+export interface ApiResponseForPaginatedListBasicGeofence {
+    /**
+     * The count of total records that are being paginated
+     * @type {number}
+     * @memberof ApiResponseForPaginatedListBasicGeofence
+     */
+    TotalSetCount?: number;
+    /**
+     * The main Data of the response
+     * @type {Array<BasicGeofence>}
+     * @memberof ApiResponseForPaginatedListBasicGeofence
+     */
+    Data?: Array<BasicGeofence>;
+    /**
+     * The API response status. Indicates if the request was successful, failed or was unauthorised.
+     * @type {string}
+     * @memberof ApiResponseForPaginatedListBasicGeofence
+     */
+    Status?: ApiResponseForPaginatedListBasicGeofenceStatusEnum;
+    /**
+     * A message to accompany the response status.  If the Status is failed, this message will hint why it failed and what you need to do.
+     * @type {string}
+     * @memberof ApiResponseForPaginatedListBasicGeofence
+     */
+    Message?: string;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum ApiResponseForPaginatedListBasicGeofenceStatusEnum {
+    Succeeded = 'Succeeded',
+    FatalException = 'FatalException',
+    GeneralError = 'GeneralError',
+    ValidationError = 'ValidationError',
+    UnAuthorized = 'UnAuthorized',
+    SessionExpired = 'SessionExpired'
+}
+
+/**
+ * A paginated API repsonse
+ * @export
  * @interface ApiResponseForPaginatedListExtendedGeofence
  */
 export interface ApiResponseForPaginatedListExtendedGeofence {
@@ -2117,6 +2162,25 @@ export interface BasicCoordinate {
      * @memberof BasicCoordinate
      */
     Longitude?: number;
+}
+/**
+ * 
+ * @export
+ * @interface BasicGeofence
+ */
+export interface BasicGeofence {
+    /**
+     * 
+     * @type {number}
+     * @memberof BasicGeofence
+     */
+    GeoFencingId?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof BasicGeofence
+     */
+    Name?: string;
 }
 /**
  * Contains a collection of Timesheet objects that are to be either created or updated.  If the ID of the timesheet is specified in the Timesheet object, then that Timesheet will be updated otherwise it will be created
@@ -8108,6 +8172,45 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
         },
         /**
          * 
+         * @summary Gets a list of all geofences in your organisation, including just the name and ID.
+         * @param {string} xChronosheetsAuth The ChronoSheets Auth Token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        geoFencingGetGeofencesBasicInfo: async (xChronosheetsAuth: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'xChronosheetsAuth' is not null or undefined
+            if (xChronosheetsAuth === null || xChronosheetsAuth === undefined) {
+                throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling geoFencingGetGeofencesBasicInfo.');
+            }
+            const localVarPath = `/GeoFencing/GetGeofencesBasicInfo`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (xChronosheetsAuth !== undefined && xChronosheetsAuth !== null) {
+                localVarHeaderParameter['x-chronosheets-auth'] = String(xChronosheetsAuth);
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Updates a geofencing with rules to be used for clock on/off automation.  Requires the \'ManageGeofencing\' permission.
          * @param {string} xChronosheetsAuth The ChronoSheets Auth Token
          * @param {UpdateGeoFenceRequest} request 
@@ -8226,6 +8329,20 @@ export const GeoFencingApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Gets a list of all geofences in your organisation, including just the name and ID.
+         * @param {string} xChronosheetsAuth The ChronoSheets Auth Token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async geoFencingGetGeofencesBasicInfo(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseForPaginatedListBasicGeofence>> {
+            const localVarAxiosArgs = await GeoFencingApiAxiosParamCreator(configuration).geoFencingGetGeofencesBasicInfo(xChronosheetsAuth, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
          * @summary Updates a geofencing with rules to be used for clock on/off automation.  Requires the \'ManageGeofencing\' permission.
          * @param {string} xChronosheetsAuth The ChronoSheets Auth Token
          * @param {UpdateGeoFenceRequest} request 
@@ -8292,6 +8409,16 @@ export const GeoFencingApiFactory = function (configuration?: Configuration, bas
          */
         geoFencingGetGeofences(xChronosheetsAuth: string, skip?: number, take?: number, options?: any): AxiosPromise<ApiResponseForPaginatedListExtendedGeofence> {
             return GeoFencingApiFp(configuration).geoFencingGetGeofences(xChronosheetsAuth, skip, take, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Gets a list of all geofences in your organisation, including just the name and ID.
+         * @param {string} xChronosheetsAuth The ChronoSheets Auth Token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        geoFencingGetGeofencesBasicInfo(xChronosheetsAuth: string, options?: any): AxiosPromise<ApiResponseForPaginatedListBasicGeofence> {
+            return GeoFencingApiFp(configuration).geoFencingGetGeofencesBasicInfo(xChronosheetsAuth, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -8365,6 +8492,18 @@ export class GeoFencingApi extends BaseAPI {
      */
     public geoFencingGetGeofences(xChronosheetsAuth: string, skip?: number, take?: number, options?: any) {
         return GeoFencingApiFp(this.configuration).geoFencingGetGeofences(xChronosheetsAuth, skip, take, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Gets a list of all geofences in your organisation, including just the name and ID.
+     * @param {string} xChronosheetsAuth The ChronoSheets Auth Token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GeoFencingApi
+     */
+    public geoFencingGetGeofencesBasicInfo(xChronosheetsAuth: string, options?: any) {
+        return GeoFencingApiFp(this.configuration).geoFencingGetGeofencesBasicInfo(xChronosheetsAuth, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
