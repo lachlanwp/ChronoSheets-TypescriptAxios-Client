@@ -1,4 +1,5 @@
-// tslint:disable
+/* tslint:disable */
+/* eslint-disable */
 /**
  * ChronoSheets API
  * <div style=\'font-size: 14px!important;font-family: Open Sans,sans-serif!important;color: #3b4151!important;\'><p>      ChronoSheets is a flexible timesheet solution for small to medium businesses, it is free for small teams of up to 3 and there are iOS and Android apps available.  Use the ChronoSheets API to create your own custom integrations.  Before starting, sign up for a ChronoSheets account at <a target=\'_BLANK\' href=\'http://tsheets.xyz/signup\'>http://tsheets.xyz/signup</a>.  </p></div><div id=\'cs-extra-info\'></div>
@@ -12,7 +13,6 @@
  */
 
 
-import * as globalImportUrl from 'url';
 import { Configuration } from './configuration';
 import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
 // Some imports not used depending on template conditions
@@ -2164,19 +2164,19 @@ export interface BasicCoordinate {
     Longitude?: number;
 }
 /**
- * 
+ * A basic geofence
  * @export
  * @interface BasicGeofence
  */
 export interface BasicGeofence {
     /**
-     * 
+     * The ID of the geofence
      * @type {number}
      * @memberof BasicGeofence
      */
     GeoFencingId?: number;
     /**
-     * 
+     * The descriptive name of the geofence
      * @type {string}
      * @memberof BasicGeofence
      */
@@ -2324,67 +2324,67 @@ export interface ClientSeriesReportItem {
     SpanSeconds?: number;
 }
 /**
- * 
+ * A user within ChronoSheets
  * @export
  * @interface ClientSideUser
  */
 export interface ClientSideUser {
     /**
-     * 
+     * The ID of the user
      * @type {number}
      * @memberof ClientSideUser
      */
     Id?: number;
     /**
-     * 
+     * The ID of the organisation
      * @type {number}
      * @memberof ClientSideUser
      */
     OrganisationId?: number;
     /**
-     * 
+     * The username of the user
      * @type {string}
      * @memberof ClientSideUser
      */
     UserName?: string;
     /**
-     * 
+     * The first name of the user
      * @type {string}
      * @memberof ClientSideUser
      */
     FirstName?: string;
     /**
-     * 
+     * The last name of the user
      * @type {string}
      * @memberof ClientSideUser
      */
     LastName?: string;
     /**
-     * 
+     * The email address of the user
      * @type {string}
      * @memberof ClientSideUser
      */
     EmailAddress?: string;
     /**
-     * 
+     * A BIT field designating which Roles/Permissions the employee will have when they sign in.  See the {timesheets.types.Enums.UserRoles} Enum for more details
      * @type {number}
      * @memberof ClientSideUser
      */
     Roles?: number;
     /**
-     * 
+     * A BIT field designating which Alerts the employee will receive.  See the {timesheets.types.Enums.AlertSettings} Enum for more details
      * @type {number}
      * @memberof ClientSideUser
      */
     AlertSettings?: number;
     /**
-     * 
+     * Whether or not the setup wizard is required
      * @type {boolean}
      * @memberof ClientSideUser
      */
     SetupWizardRequired?: boolean;
     /**
-     * 
+     * Whether or not the user is subscribed to the user
      * @type {boolean}
      * @memberof ClientSideUser
      */
@@ -2396,7 +2396,7 @@ export interface ClientSideUser {
      */
     Organisation?: Organisation;
     /**
-     * 
+     * Whether or not this account is the organisation\'s primary account.
      * @type {boolean}
      * @memberof ClientSideUser
      */
@@ -2585,7 +2585,7 @@ export interface CreateGeoFenceRequest {
      */
     SendAlertToOrgGroupId?: number;
     /**
-     * Define when you want the alerts to be setn
+     * Define when you want the alerts to be sent
      * @type {string}
      * @memberof CreateGeoFenceRequest
      */
@@ -2687,7 +2687,7 @@ export interface CreateTripRequest {
     */
 export enum CreateTripRequestMobilePlatformEnum {
     Unknown = 'Unknown',
-    IOS = 'iOS',
+    IOs = 'iOS',
     Android = 'Android'
 }
 
@@ -2736,145 +2736,145 @@ export interface DoLoginResponse {
     LoggedInUser?: ClientSideUser;
 }
 /**
- * 
+ * An extended geofence record
  * @export
  * @interface ExtendedGeofence
  */
 export interface ExtendedGeofence {
     /**
-     * 
+     * The Job code used when the employee enters/exits the geofence
      * @type {string}
      * @memberof ExtendedGeofence
      */
     JobCode?: string;
     /**
-     * 
+     * The name of the task used when the employee enters/exits the geofence
      * @type {string}
      * @memberof ExtendedGeofence
      */
     TaskName?: string;
     /**
-     * 
+     * The name of the employee who created the geofence
      * @type {string}
      * @memberof ExtendedGeofence
      */
     CreatedBy?: string;
     /**
-     * 
+     * The name of the employee who last updated the geofence
      * @type {string}
      * @memberof ExtendedGeofence
      */
     UpdatedBy?: string;
     /**
-     * 
+     * The name of the organisation group who will be notified when the geofence is triggered
      * @type {string}
      * @memberof ExtendedGeofence
      */
     AlertOrganisation?: string;
     /**
-     * 
+     * The ID of the geofence
      * @type {number}
      * @memberof ExtendedGeofence
      */
     GeoFencingId?: number;
     /**
-     * 
+     * The ID of the organisation owning the geofence record
      * @type {number}
      * @memberof ExtendedGeofence
      */
     OrgId?: number;
     /**
-     * 
+     * The ID of the user/employee who created the geofence
      * @type {number}
      * @memberof ExtendedGeofence
      */
     CreatedByUserId?: number;
     /**
-     * 
+     * The ID of the user/employee who last updated the geofence
      * @type {number}
      * @memberof ExtendedGeofence
      */
     LastUpdatedByUserId?: number;
     /**
-     * 
+     * A descriptive name of the geofence
      * @type {string}
      * @memberof ExtendedGeofence
      */
     Name?: string;
     /**
-     * 
+     * The name of the approx. location of the geofence
      * @type {string}
      * @memberof ExtendedGeofence
      */
     LocationName?: string;
     /**
-     * 
+     * A list of co-ordinates specifying the geofence
      * @type {Array<BasicCoordinate>}
      * @memberof ExtendedGeofence
      */
     Coordinates?: Array<BasicCoordinate>;
     /**
-     * 
+     * The date and time the geofence was created.  Time is in UTC.
      * @type {string}
      * @memberof ExtendedGeofence
      */
     CreatedAt?: string;
     /**
-     * 
+     * The date and time the geofence was updated last.  Time is in UTC.
      * @type {string}
      * @memberof ExtendedGeofence
      */
     UpdatedAt?: string;
     /**
-     * 
+     * The ID of the job code used when the employee enters/exits the geofence
      * @type {number}
      * @memberof ExtendedGeofence
      */
     TriggerJobCodeId?: number;
     /**
-     * 
+     * The ID of the task used when the employee enters/exits the geofence
      * @type {number}
      * @memberof ExtendedGeofence
      */
     TriggerTaskId?: number;
     /**
-     * 
+     * The settings for triggering actions
      * @type {string}
      * @memberof ExtendedGeofence
      */
     TriggerSettings?: ExtendedGeofenceTriggerSettingsEnum;
     /**
-     * 
+     * The organisation group that will be notified when the geofence is triggered
      * @type {number}
      * @memberof ExtendedGeofence
      */
     AlertToOrgGroupId?: number;
     /**
-     * 
+     * The settings for trigger alerts
      * @type {string}
      * @memberof ExtendedGeofence
      */
     AlertSettings?: ExtendedGeofenceAlertSettingsEnum;
     /**
-     * 
+     * The hour start time. E.g. 13 would be 1pm.  Time is in 24hr format.
      * @type {number}
      * @memberof ExtendedGeofence
      */
     StartTimeHour?: number;
     /**
-     * 
+     * The minute start time.  E.g. 46 would be the 46th minute of the hour.
      * @type {number}
      * @memberof ExtendedGeofence
      */
     StartTimeMinute?: number;
     /**
-     * 
+     * The hour end time. E.g. 21 would be 9pm.  Time is in 24hr format.
      * @type {number}
      * @memberof ExtendedGeofence
      */
     EndTimeHour?: number;
     /**
-     * 
+     * The minute end time.  E.g. 13 would be the 13th minute of the hour.
      * @type {number}
      * @memberof ExtendedGeofence
      */
@@ -2933,243 +2933,243 @@ export interface FleetSummaryReportItem {
      */
     TotalRunningCostDollars?: number;
     /**
-     * 
+     * The ID of the vehicle
      * @type {number}
      * @memberof FleetSummaryReportItem
      */
     Id?: number;
     /**
-     * 
+     * The ID of the organisation managing the vehicle
      * @type {number}
      * @memberof FleetSummaryReportItem
      */
     OrganisationId?: number;
     /**
-     * 
+     * A name given to the vehicle
      * @type {string}
      * @memberof FleetSummaryReportItem
      */
     Name?: string;
     /**
-     * 
+     * The cost, in dollars, of running the vehicle over one kilometer
      * @type {number}
      * @memberof FleetSummaryReportItem
      */
     CostPerKilometer?: number;
     /**
-     * 
+     * The make of the vehicle
      * @type {string}
      * @memberof FleetSummaryReportItem
      */
     Make?: string;
     /**
-     * 
+     * The model of the vehicle
      * @type {string}
      * @memberof FleetSummaryReportItem
      */
     Model?: string;
     /**
-     * 
+     * The year the vehicle was manufactured
      * @type {string}
      * @memberof FleetSummaryReportItem
      */
     Year?: string;
     /**
-     * 
+     * The licence plate number of the vehicle
      * @type {string}
      * @memberof FleetSummaryReportItem
      */
     LicencePlateNumber?: string;
     /**
-     * 
+     * Whether or not the vehicle is deleted
      * @type {boolean}
      * @memberof FleetSummaryReportItem
      */
     IsDeleted?: boolean;
     /**
-     * 
+     * An array of employee IDs that are permitted to use the vehicle
      * @type {Array<number>}
      * @memberof FleetSummaryReportItem
      */
     PermittedEmployees?: Array<number>;
 }
 /**
- * 
+ * A vehicle within the fleet
  * @export
  * @interface FleetVehicle
  */
 export interface FleetVehicle {
     /**
-     * 
+     * The ID of the vehicle
      * @type {number}
      * @memberof FleetVehicle
      */
     Id?: number;
     /**
-     * 
+     * The ID of the organisation managing the vehicle
      * @type {number}
      * @memberof FleetVehicle
      */
     OrganisationId?: number;
     /**
-     * 
+     * A name given to the vehicle
      * @type {string}
      * @memberof FleetVehicle
      */
     Name?: string;
     /**
-     * 
+     * The cost, in dollars, of running the vehicle over one kilometer
      * @type {number}
      * @memberof FleetVehicle
      */
     CostPerKilometer?: number;
     /**
-     * 
+     * The make of the vehicle
      * @type {string}
      * @memberof FleetVehicle
      */
     Make?: string;
     /**
-     * 
+     * The model of the vehicle
      * @type {string}
      * @memberof FleetVehicle
      */
     Model?: string;
     /**
-     * 
+     * The year the vehicle was manufactured
      * @type {string}
      * @memberof FleetVehicle
      */
     Year?: string;
     /**
-     * 
+     * The licence plate number of the vehicle
      * @type {string}
      * @memberof FleetVehicle
      */
     LicencePlateNumber?: string;
     /**
-     * 
+     * Whether or not the vehicle is deleted
      * @type {boolean}
      * @memberof FleetVehicle
      */
     IsDeleted?: boolean;
     /**
-     * 
+     * An array of employee IDs that are permitted to use the vehicle
      * @type {Array<number>}
      * @memberof FleetVehicle
      */
     PermittedEmployees?: Array<number>;
 }
 /**
- * 
+ * A geofence
  * @export
  * @interface Geofence
  */
 export interface Geofence {
     /**
-     * 
+     * The ID of the geofence
      * @type {number}
      * @memberof Geofence
      */
     GeoFencingId?: number;
     /**
-     * 
+     * The ID of the organisation owning the geofence record
      * @type {number}
      * @memberof Geofence
      */
     OrgId?: number;
     /**
-     * 
+     * The ID of the user/employee who created the geofence
      * @type {number}
      * @memberof Geofence
      */
     CreatedByUserId?: number;
     /**
-     * 
+     * The ID of the user/employee who last updated the geofence
      * @type {number}
      * @memberof Geofence
      */
     LastUpdatedByUserId?: number;
     /**
-     * 
+     * A descriptive name of the geofence
      * @type {string}
      * @memberof Geofence
      */
     Name?: string;
     /**
-     * 
+     * The name of the approx. location of the geofence
      * @type {string}
      * @memberof Geofence
      */
     LocationName?: string;
     /**
-     * 
+     * A list of co-ordinates specifying the geofence
      * @type {Array<BasicCoordinate>}
      * @memberof Geofence
      */
     Coordinates?: Array<BasicCoordinate>;
     /**
-     * 
+     * The date and time the geofence was created.  Time is in UTC.
      * @type {string}
      * @memberof Geofence
      */
     CreatedAt?: string;
     /**
-     * 
+     * The date and time the geofence was updated last.  Time is in UTC.
      * @type {string}
      * @memberof Geofence
      */
     UpdatedAt?: string;
     /**
-     * 
+     * The ID of the job code used when the employee enters/exits the geofence
      * @type {number}
      * @memberof Geofence
      */
     TriggerJobCodeId?: number;
     /**
-     * 
+     * The ID of the task used when the employee enters/exits the geofence
      * @type {number}
      * @memberof Geofence
      */
     TriggerTaskId?: number;
     /**
-     * 
+     * The settings for triggering actions
      * @type {string}
      * @memberof Geofence
      */
     TriggerSettings?: GeofenceTriggerSettingsEnum;
     /**
-     * 
+     * The organisation group that will be notified when the geofence is triggered
      * @type {number}
      * @memberof Geofence
      */
     AlertToOrgGroupId?: number;
     /**
-     * 
+     * The settings for trigger alerts
      * @type {string}
      * @memberof Geofence
      */
     AlertSettings?: GeofenceAlertSettingsEnum;
     /**
-     * 
+     * The hour start time. E.g. 13 would be 1pm.  Time is in 24hr format.
      * @type {number}
      * @memberof Geofence
      */
     StartTimeHour?: number;
     /**
-     * 
+     * The minute start time.  E.g. 46 would be the 46th minute of the hour.
      * @type {number}
      * @memberof Geofence
      */
     StartTimeMinute?: number;
     /**
-     * 
+     * The hour end time. E.g. 21 would be 9pm.  Time is in 24hr format.
      * @type {number}
      * @memberof Geofence
      */
     EndTimeHour?: number;
     /**
-     * 
+     * The minute end time.  E.g. 13 would be the 13th minute of the hour.
      * @type {number}
      * @memberof Geofence
      */
@@ -3769,145 +3769,145 @@ export interface OrgReportTimesheetFileAttachment {
      */
     LastName?: string;
     /**
-     * 
+     * The ID of the timesheet this attachment is attached to.
      * @type {number}
      * @memberof OrgReportTimesheetFileAttachment
      */
     TimesheetId?: number;
     /**
-     * 
+     * The limited use signed URL for the document (if it\'s not an image).  This URL is unique and will eventually expire.  If the attachment is an image, then this won\'t be set.
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     DocumentS3SignedUrl?: string;
     /**
-     * 
+     * The limited use signed URL for the large version of the image.  This URL is unique and will eventually expire.  Only set when the attachment is actually an image.
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     ImageLargeS3SignedUrl?: string;
     /**
-     * 
+     * The limited use signed URL for the medium version of the image.  This URL is unique and will eventually expire.  Only set when the attachment is actually an image.
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     ImageMediumS3SignedUrl?: string;
     /**
-     * 
+     * The limited use signed URL for the small version of the image.  This URL is unique and will eventually expire.  Only set when the attachment is actually an image.
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     ImageSmallS3SignedUrl?: string;
     /**
-     * 
+     * The start date and time of the timesheet that this attachment is attached to
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     TimesheetStart?: string;
     /**
-     * 
+     * The end date and time of the timesheet that this attachment is attached to
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     TimesheetEnd?: string;
     /**
-     * 
+     * The ID of the file attachment
      * @type {number}
      * @memberof OrgReportTimesheetFileAttachment
      */
     FileAttachmentId?: number;
     /**
-     * 
+     * The ID of the user who attached the file
      * @type {number}
      * @memberof OrgReportTimesheetFileAttachment
      */
     UserId?: number;
     /**
-     * 
+     * The ID of the organisation that owns the file and employs the employee
      * @type {number}
      * @memberof OrgReportTimesheetFileAttachment
      */
     OrgId?: number;
     /**
-     * 
+     * The mobile platform that was used to attach the file
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     MobilePlatform?: OrgReportTimesheetFileAttachmentMobilePlatformEnum;
     /**
-     * 
+     * The type of file attachment
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     AttachmentType?: OrgReportTimesheetFileAttachmentAttachmentTypeEnum;
     /**
-     * 
+     * Any notes regarding the file attachment
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     Notes?: string;
     /**
-     * 
+     * The path to the file attachment as hosted by ChronoSheets storage, if it\'s not an image.  If the attachment is an image then this won\'t be set.
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     NonImageFilePath?: string;
     /**
-     * 
+     * The path to the file attachment as hosted by ChronoSheets storage, only set if it\'s an image.  This is regarding the large version of the image.
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     ImageLargeFilePath?: string;
     /**
-     * 
+     * The path to the file attachment as hosted by ChronoSheets storage, only set if it\'s an image.  This is regarding the medium version of the image.
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     ImageMediumFilePath?: string;
     /**
-     * 
+     * The path to the file attachment as hosted by ChronoSheets storage, only set if it\'s an image.  This is regarding the small version of the image.
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     ImageSmallFilePath?: string;
     /**
-     * 
+     * The original file name of the attachment
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     OriginalFileName?: string;
     /**
-     * 
+     * Meta-data indicating the latitude of the file attachment.  If the attachment is an image, this data originates from the meta data inside the image file.
      * @type {number}
      * @memberof OrgReportTimesheetFileAttachment
      */
     Latitude?: number;
     /**
-     * 
+     * Meta-data indicating the longitude of the file attachment.  If the attachment is an image, this data originates from the meta data inside the image file.
      * @type {number}
      * @memberof OrgReportTimesheetFileAttachment
      */
     Longitude?: number;
     /**
-     * 
+     * The date and time the attachment was uploaded.  Time is in UTC.
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     DateUploaded?: string;
     /**
-     * 
+     * The original date and time the image was captured, if it was an image.  This data originates from the meta data inside the image file.
      * @type {string}
      * @memberof OrgReportTimesheetFileAttachment
      */
     DateImageCaptured?: string;
     /**
-     * 
+     * The number of bytes allocated for storing the file attachment.
      * @type {number}
      * @memberof OrgReportTimesheetFileAttachment
      */
     StorageAllocationBytes?: number;
     /**
-     * 
+     * If the attachment was an audio file, this field indicates the duration of the audio file in seconds.  This data originates from the meta data inside the audio file.
      * @type {number}
      * @memberof OrgReportTimesheetFileAttachment
      */
@@ -3920,7 +3920,7 @@ export interface OrgReportTimesheetFileAttachment {
     */
 export enum OrgReportTimesheetFileAttachmentMobilePlatformEnum {
     Unknown = 'Unknown',
-    IOS = 'iOS',
+    IOs = 'iOS',
     Android = 'Android'
 }
 /**
@@ -3931,8 +3931,8 @@ export enum OrgReportTimesheetFileAttachmentAttachmentTypeEnum {
     Image = 'Image',
     WordDoc = 'WordDoc',
     Pdf = 'Pdf',
-    MSSpreadSheet = 'MSSpreadSheet',
-    MSPowerPoint = 'MSPowerPoint',
+    MsSpreadSheet = 'MSSpreadSheet',
+    MsPowerPoint = 'MSPowerPoint',
     RichTextFormat = 'RichTextFormat',
     ZipFile = 'ZipFile',
     Other = 'Other',
@@ -4024,145 +4024,145 @@ export interface OrgReportTranscript {
      */
     LastName?: string;
     /**
-     * 
+     * The ID of the timesheet this attachment is attached to.
      * @type {number}
      * @memberof OrgReportTranscript
      */
     TimesheetId?: number;
     /**
-     * 
+     * The limited use signed URL for the document (if it\'s not an image).  This URL is unique and will eventually expire.  If the attachment is an image, then this won\'t be set.
      * @type {string}
      * @memberof OrgReportTranscript
      */
     DocumentS3SignedUrl?: string;
     /**
-     * 
+     * The limited use signed URL for the large version of the image.  This URL is unique and will eventually expire.  Only set when the attachment is actually an image.
      * @type {string}
      * @memberof OrgReportTranscript
      */
     ImageLargeS3SignedUrl?: string;
     /**
-     * 
+     * The limited use signed URL for the medium version of the image.  This URL is unique and will eventually expire.  Only set when the attachment is actually an image.
      * @type {string}
      * @memberof OrgReportTranscript
      */
     ImageMediumS3SignedUrl?: string;
     /**
-     * 
+     * The limited use signed URL for the small version of the image.  This URL is unique and will eventually expire.  Only set when the attachment is actually an image.
      * @type {string}
      * @memberof OrgReportTranscript
      */
     ImageSmallS3SignedUrl?: string;
     /**
-     * 
+     * The start date and time of the timesheet that this attachment is attached to
      * @type {string}
      * @memberof OrgReportTranscript
      */
     TimesheetStart?: string;
     /**
-     * 
+     * The end date and time of the timesheet that this attachment is attached to
      * @type {string}
      * @memberof OrgReportTranscript
      */
     TimesheetEnd?: string;
     /**
-     * 
+     * The ID of the file attachment
      * @type {number}
      * @memberof OrgReportTranscript
      */
     FileAttachmentId?: number;
     /**
-     * 
+     * The ID of the user who attached the file
      * @type {number}
      * @memberof OrgReportTranscript
      */
     UserId?: number;
     /**
-     * 
+     * The ID of the organisation that owns the file and employs the employee
      * @type {number}
      * @memberof OrgReportTranscript
      */
     OrgId?: number;
     /**
-     * 
+     * The mobile platform that was used to attach the file
      * @type {string}
      * @memberof OrgReportTranscript
      */
     MobilePlatform?: OrgReportTranscriptMobilePlatformEnum;
     /**
-     * 
+     * The type of file attachment
      * @type {string}
      * @memberof OrgReportTranscript
      */
     AttachmentType?: OrgReportTranscriptAttachmentTypeEnum;
     /**
-     * 
+     * Any notes regarding the file attachment
      * @type {string}
      * @memberof OrgReportTranscript
      */
     Notes?: string;
     /**
-     * 
+     * The path to the file attachment as hosted by ChronoSheets storage, if it\'s not an image.  If the attachment is an image then this won\'t be set.
      * @type {string}
      * @memberof OrgReportTranscript
      */
     NonImageFilePath?: string;
     /**
-     * 
+     * The path to the file attachment as hosted by ChronoSheets storage, only set if it\'s an image.  This is regarding the large version of the image.
      * @type {string}
      * @memberof OrgReportTranscript
      */
     ImageLargeFilePath?: string;
     /**
-     * 
+     * The path to the file attachment as hosted by ChronoSheets storage, only set if it\'s an image.  This is regarding the medium version of the image.
      * @type {string}
      * @memberof OrgReportTranscript
      */
     ImageMediumFilePath?: string;
     /**
-     * 
+     * The path to the file attachment as hosted by ChronoSheets storage, only set if it\'s an image.  This is regarding the small version of the image.
      * @type {string}
      * @memberof OrgReportTranscript
      */
     ImageSmallFilePath?: string;
     /**
-     * 
+     * The original file name of the attachment
      * @type {string}
      * @memberof OrgReportTranscript
      */
     OriginalFileName?: string;
     /**
-     * 
+     * Meta-data indicating the latitude of the file attachment.  If the attachment is an image, this data originates from the meta data inside the image file.
      * @type {number}
      * @memberof OrgReportTranscript
      */
     Latitude?: number;
     /**
-     * 
+     * Meta-data indicating the longitude of the file attachment.  If the attachment is an image, this data originates from the meta data inside the image file.
      * @type {number}
      * @memberof OrgReportTranscript
      */
     Longitude?: number;
     /**
-     * 
+     * The date and time the attachment was uploaded.  Time is in UTC.
      * @type {string}
      * @memberof OrgReportTranscript
      */
     DateUploaded?: string;
     /**
-     * 
+     * The original date and time the image was captured, if it was an image.  This data originates from the meta data inside the image file.
      * @type {string}
      * @memberof OrgReportTranscript
      */
     DateImageCaptured?: string;
     /**
-     * 
+     * The number of bytes allocated for storing the file attachment.
      * @type {number}
      * @memberof OrgReportTranscript
      */
     StorageAllocationBytes?: number;
     /**
-     * 
+     * If the attachment was an audio file, this field indicates the duration of the audio file in seconds.  This data originates from the meta data inside the audio file.
      * @type {number}
      * @memberof OrgReportTranscript
      */
@@ -4196,7 +4196,7 @@ export enum OrgReportTranscriptTranscriptionStatusEnum {
     */
 export enum OrgReportTranscriptMobilePlatformEnum {
     Unknown = 'Unknown',
-    IOS = 'iOS',
+    IOs = 'iOS',
     Android = 'Android'
 }
 /**
@@ -4207,8 +4207,8 @@ export enum OrgReportTranscriptAttachmentTypeEnum {
     Image = 'Image',
     WordDoc = 'WordDoc',
     Pdf = 'Pdf',
-    MSSpreadSheet = 'MSSpreadSheet',
-    MSPowerPoint = 'MSPowerPoint',
+    MsSpreadSheet = 'MSSpreadSheet',
+    MsPowerPoint = 'MSPowerPoint',
     RichTextFormat = 'RichTextFormat',
     ZipFile = 'ZipFile',
     Other = 'Other',
@@ -4367,138 +4367,138 @@ export interface OrgReportTrip {
     */
 export enum OrgReportTripMobilePlatformEnum {
     Unknown = 'Unknown',
-    IOS = 'iOS',
+    IOs = 'iOS',
     Android = 'Android'
 }
 
 /**
- * 
+ * An organisation in ChronoSheets
  * @export
  * @interface Organisation
  */
 export interface Organisation {
     /**
-     * 
+     * The ID of the organisation
      * @type {number}
      * @memberof Organisation
      */
     Id?: number;
     /**
-     * 
+     * The name of the organisation
      * @type {string}
      * @memberof Organisation
      */
     Name?: string;
     /**
-     * 
+     * Address line 1 of the organisation
      * @type {string}
      * @memberof Organisation
      */
     AddressLine01?: string;
     /**
-     * 
+     * Address line 2 of the organisation
      * @type {string}
      * @memberof Organisation
      */
     AddressLine02?: string;
     /**
-     * 
+     * The suburb where the organisation is located
      * @type {string}
      * @memberof Organisation
      */
     Suburb?: string;
     /**
-     * 
+     * The state where the organisation is located
      * @type {string}
      * @memberof Organisation
      */
     State?: string;
     /**
-     * 
+     * The postcode of the organisation
      * @type {string}
      * @memberof Organisation
      */
     Postcode?: string;
     /**
-     * 
+     * The country of the organisation
      * @type {string}
      * @memberof Organisation
      */
     Country?: string;
     /**
-     * 
+     * The primary phone contact number of the organisation
      * @type {string}
      * @memberof Organisation
      */
     Phone?: string;
     /**
-     * 
+     * The primary email address of the organisation
      * @type {string}
      * @memberof Organisation
      */
     EmailAddress?: string;
     /**
-     * 
+     * The timezone of the organisation
      * @type {string}
      * @memberof Organisation
      */
     Timezone?: string;
     /**
-     * 
+     * The customer ID of the payments subscription
      * @type {string}
      * @memberof Organisation
      */
     SubscriptionCustomerId?: string;
     /**
-     * 
+     * The sign up token
      * @type {string}
      * @memberof Organisation
      */
     SignupToken?: string;
     /**
-     * 
+     * Whether or not the organisation is active
      * @type {boolean}
      * @memberof Organisation
      */
     IsActive?: boolean;
     /**
-     * 
+     * The payments coupon code
      * @type {string}
      * @memberof Organisation
      */
     StripeCouponCode?: string;
     /**
-     * 
+     * The source of the subscription
      * @type {string}
      * @memberof Organisation
      */
     SubscriptionSource?: OrganisationSubscriptionSourceEnum;
     /**
-     * 
+     * The source where the organisation signed up
      * @type {string}
      * @memberof Organisation
      */
     SignUpSource?: OrganisationSignUpSourceEnum;
     /**
-     * 
+     * A temporary mobile sign up code
      * @type {string}
      * @memberof Organisation
      */
     MobileSignUpCode?: string;
     /**
-     * 
+     * The start date and time of the organisations subscription
      * @type {string}
      * @memberof Organisation
      */
     SubscriptionCycleStart?: string;
     /**
-     * 
+     * The end date and time of the organisations subscription
      * @type {string}
      * @memberof Organisation
      */
     SubscriptionCycleEnd?: string;
     /**
-     * 
+     * The organisation\'s pricing plans
      * @type {Array<OrganisationPricingPlan>}
      * @memberof Organisation
      */
@@ -4521,36 +4521,36 @@ export enum OrganisationSubscriptionSourceEnum {
     */
 export enum OrganisationSignUpSourceEnum {
     Desktop = 'Desktop',
-    MobileiOS = 'MobileiOS',
+    MobileiOs = 'MobileiOS',
     MobileAndroid = 'MobileAndroid'
 }
 
 /**
- * 
+ * An organisation group.  Organisation groups are used throughout ChronoSheets to assign many groups to one alert, action or restriction.  E.g. you can assign an organisation group to receive geofence alerts, or you could restrict access to vehicles to users within an organisation group.
  * @export
  * @interface OrganisationGroup
  */
 export interface OrganisationGroup {
     /**
-     * 
+     * The ID of the organisation group
      * @type {number}
      * @memberof OrganisationGroup
      */
     Id?: number;
     /**
-     * 
+     * The ID of the organisation
      * @type {number}
      * @memberof OrganisationGroup
      */
     OrganisationId?: number;
     /**
-     * 
+     * The descriptive name of the organisation group
      * @type {string}
      * @memberof OrganisationGroup
      */
     OrganisationGroupName?: string;
     /**
-     * 
+     * Whether or not the organisation group is deleted
      * @type {boolean}
      * @memberof OrganisationGroup
      */
@@ -4576,55 +4576,55 @@ export interface OrganisationPricingPlan {
     Quantity?: number;
 }
 /**
- * 
+ * A project in ChronoSheets
  * @export
  * @interface Project
  */
 export interface Project {
     /**
-     * 
+     * The ID of the project
      * @type {number}
      * @memberof Project
      */
     Id?: number;
     /**
-     * 
+     * The ID of the client for which the project is being undertaken for
      * @type {number}
      * @memberof Project
      */
     ClientId?: number;
     /**
-     * 
+     * The ID of the organisation that is completing the project
      * @type {number}
      * @memberof Project
      */
     OrganisationId?: number;
     /**
-     * 
+     * A descriptive name of the project
      * @type {string}
      * @memberof Project
      */
     ProjectName?: string;
     /**
-     * 
+     * The project\'s estimated cost
      * @type {number}
      * @memberof Project
      */
     CostEstimation?: number;
     /**
-     * 
+     * The project\'s actual cost
      * @type {number}
      * @memberof Project
      */
     CostActual?: number;
     /**
-     * 
+     * The start date and time of the project
      * @type {string}
      * @memberof Project
      */
     StartDate?: string;
     /**
-     * 
+     * The end date and time of the project
      * @type {string}
      * @memberof Project
      */
@@ -5403,151 +5403,151 @@ export enum TimesheetAutomationWithOrgAndGeofenceAutomationActionTypeEnum {
 }
 
 /**
- * 
+ * A file attachment attached to a timesheet
  * @export
  * @interface TimesheetFileAttachment
  */
 export interface TimesheetFileAttachment {
     /**
-     * 
+     * The ID of the timesheet this attachment is attached to.
      * @type {number}
      * @memberof TimesheetFileAttachment
      */
     TimesheetId?: number;
     /**
-     * 
+     * The limited use signed URL for the document (if it\'s not an image).  This URL is unique and will eventually expire.  If the attachment is an image, then this won\'t be set.
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     DocumentS3SignedUrl?: string;
     /**
-     * 
+     * The limited use signed URL for the large version of the image.  This URL is unique and will eventually expire.  Only set when the attachment is actually an image.
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     ImageLargeS3SignedUrl?: string;
     /**
-     * 
+     * The limited use signed URL for the medium version of the image.  This URL is unique and will eventually expire.  Only set when the attachment is actually an image.
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     ImageMediumS3SignedUrl?: string;
     /**
-     * 
+     * The limited use signed URL for the small version of the image.  This URL is unique and will eventually expire.  Only set when the attachment is actually an image.
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     ImageSmallS3SignedUrl?: string;
     /**
-     * 
+     * The start date and time of the timesheet that this attachment is attached to
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     TimesheetStart?: string;
     /**
-     * 
+     * The end date and time of the timesheet that this attachment is attached to
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     TimesheetEnd?: string;
     /**
-     * 
+     * The ID of the file attachment
      * @type {number}
      * @memberof TimesheetFileAttachment
      */
     FileAttachmentId?: number;
     /**
-     * 
+     * The ID of the user who attached the file
      * @type {number}
      * @memberof TimesheetFileAttachment
      */
     UserId?: number;
     /**
-     * 
+     * The ID of the organisation that owns the file and employs the employee
      * @type {number}
      * @memberof TimesheetFileAttachment
      */
     OrgId?: number;
     /**
-     * 
+     * The mobile platform that was used to attach the file
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     MobilePlatform?: TimesheetFileAttachmentMobilePlatformEnum;
     /**
-     * 
+     * The type of file attachment
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     AttachmentType?: TimesheetFileAttachmentAttachmentTypeEnum;
     /**
-     * 
+     * Any notes regarding the file attachment
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     Notes?: string;
     /**
-     * 
+     * The path to the file attachment as hosted by ChronoSheets storage, if it\'s not an image.  If the attachment is an image then this won\'t be set.
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     NonImageFilePath?: string;
     /**
-     * 
+     * The path to the file attachment as hosted by ChronoSheets storage, only set if it\'s an image.  This is regarding the large version of the image.
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     ImageLargeFilePath?: string;
     /**
-     * 
+     * The path to the file attachment as hosted by ChronoSheets storage, only set if it\'s an image.  This is regarding the medium version of the image.
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     ImageMediumFilePath?: string;
     /**
-     * 
+     * The path to the file attachment as hosted by ChronoSheets storage, only set if it\'s an image.  This is regarding the small version of the image.
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     ImageSmallFilePath?: string;
     /**
-     * 
+     * The original file name of the attachment
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     OriginalFileName?: string;
     /**
-     * 
+     * Meta-data indicating the latitude of the file attachment.  If the attachment is an image, this data originates from the meta data inside the image file.
      * @type {number}
      * @memberof TimesheetFileAttachment
      */
     Latitude?: number;
     /**
-     * 
+     * Meta-data indicating the longitude of the file attachment.  If the attachment is an image, this data originates from the meta data inside the image file.
      * @type {number}
      * @memberof TimesheetFileAttachment
      */
     Longitude?: number;
     /**
-     * 
+     * The date and time the attachment was uploaded.  Time is in UTC.
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     DateUploaded?: string;
     /**
-     * 
+     * The original date and time the image was captured, if it was an image.  This data originates from the meta data inside the image file.
      * @type {string}
      * @memberof TimesheetFileAttachment
      */
     DateImageCaptured?: string;
     /**
-     * 
+     * The number of bytes allocated for storing the file attachment.
      * @type {number}
      * @memberof TimesheetFileAttachment
      */
     StorageAllocationBytes?: number;
     /**
-     * 
+     * If the attachment was an audio file, this field indicates the duration of the audio file in seconds.  This data originates from the meta data inside the audio file.
      * @type {number}
      * @memberof TimesheetFileAttachment
      */
@@ -5560,7 +5560,7 @@ export interface TimesheetFileAttachment {
     */
 export enum TimesheetFileAttachmentMobilePlatformEnum {
     Unknown = 'Unknown',
-    IOS = 'iOS',
+    IOs = 'iOS',
     Android = 'Android'
 }
 /**
@@ -5571,8 +5571,8 @@ export enum TimesheetFileAttachmentAttachmentTypeEnum {
     Image = 'Image',
     WordDoc = 'WordDoc',
     Pdf = 'Pdf',
-    MSSpreadSheet = 'MSSpreadSheet',
-    MSPowerPoint = 'MSPowerPoint',
+    MsSpreadSheet = 'MSSpreadSheet',
+    MsPowerPoint = 'MSPowerPoint',
     RichTextFormat = 'RichTextFormat',
     ZipFile = 'ZipFile',
     Other = 'Other',
@@ -5816,7 +5816,7 @@ export interface Trip {
     */
 export enum TripMobilePlatformEnum {
     Unknown = 'Unknown',
-    IOS = 'iOS',
+    IOs = 'iOS',
     Android = 'Android'
 }
 
@@ -5882,7 +5882,7 @@ export interface UpdateGeoFenceRequest {
      */
     SendAlertToOrgGroupId?: number;
     /**
-     * Define when you want the alerts to be setn
+     * Define when you want the alerts to be sent
      * @type {string}
      * @memberof UpdateGeoFenceRequest
      */
@@ -6310,61 +6310,61 @@ export interface UserForManagement {
      */
     IsAccountActive?: boolean;
     /**
-     * 
+     * The ID of the user
      * @type {number}
      * @memberof UserForManagement
      */
     Id?: number;
     /**
-     * 
+     * The ID of the organisation
      * @type {number}
      * @memberof UserForManagement
      */
     OrganisationId?: number;
     /**
-     * 
+     * The username of the user
      * @type {string}
      * @memberof UserForManagement
      */
     UserName?: string;
     /**
-     * 
+     * The first name of the user
      * @type {string}
      * @memberof UserForManagement
      */
     FirstName?: string;
     /**
-     * 
+     * The last name of the user
      * @type {string}
      * @memberof UserForManagement
      */
     LastName?: string;
     /**
-     * 
+     * The email address of the user
      * @type {string}
      * @memberof UserForManagement
      */
     EmailAddress?: string;
     /**
-     * 
+     * A BIT field designating which Roles/Permissions the employee will have when they sign in.  See the {timesheets.types.Enums.UserRoles} Enum for more details
      * @type {number}
      * @memberof UserForManagement
      */
     Roles?: number;
     /**
-     * 
+     * A BIT field designating which Alerts the employee will receive.  See the {timesheets.types.Enums.AlertSettings} Enum for more details
      * @type {number}
      * @memberof UserForManagement
      */
     AlertSettings?: number;
     /**
-     * 
+     * Whether or not the setup wizard is required
      * @type {boolean}
      * @memberof UserForManagement
      */
     SetupWizardRequired?: boolean;
     /**
-     * 
+     * Whether or not the user is subscribed to the user
      * @type {boolean}
      * @memberof UserForManagement
      */
@@ -6376,7 +6376,7 @@ export interface UserForManagement {
      */
     Organisation?: Organisation;
     /**
-     * 
+     * Whether or not this account is the organisation\'s primary account.
      * @type {boolean}
      * @memberof UserForManagement
      */
@@ -6595,11 +6595,13 @@ export const AggregateClientProjectsApiAxiosParamCreator = function (configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling aggregateClientProjectsGetAggregateClientProjects.');
             }
             const localVarPath = `/AggregateClientProjects/GetAggregateClientProjects`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -6610,14 +6612,19 @@ export const AggregateClientProjectsApiAxiosParamCreator = function (configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -6640,7 +6647,7 @@ export const AggregateClientProjectsApiFp = function(configuration?: Configurati
         async aggregateClientProjectsGetAggregateClientProjects(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListAggregateClient>> {
             const localVarAxiosArgs = await AggregateClientProjectsApiAxiosParamCreator(configuration).aggregateClientProjectsGetAggregateClientProjects(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -6684,7 +6691,6 @@ export class AggregateClientProjectsApi extends BaseAPI {
     public aggregateClientProjectsGetAggregateClientProjects(xChronosheetsAuth: string, options?: any) {
         return AggregateClientProjectsApiFp(this.configuration).aggregateClientProjectsGetAggregateClientProjects(xChronosheetsAuth, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -6707,11 +6713,13 @@ export const AggregateJobTasksApiAxiosParamCreator = function (configuration?: C
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling aggregateJobTasksGetAggregateJobTasks.');
             }
             const localVarPath = `/AggregateJobTasks/GetAggregateJobTasks`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -6722,14 +6730,19 @@ export const AggregateJobTasksApiAxiosParamCreator = function (configuration?: C
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -6752,7 +6765,7 @@ export const AggregateJobTasksApiFp = function(configuration?: Configuration) {
         async aggregateJobTasksGetAggregateJobTasks(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListAggregateJobCode>> {
             const localVarAxiosArgs = await AggregateJobTasksApiAxiosParamCreator(configuration).aggregateJobTasksGetAggregateJobTasks(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -6796,7 +6809,6 @@ export class AggregateJobTasksApi extends BaseAPI {
     public aggregateJobTasksGetAggregateJobTasks(xChronosheetsAuth: string, options?: any) {
         return AggregateJobTasksApiFp(this.configuration).aggregateJobTasksGetAggregateJobTasks(xChronosheetsAuth, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -6824,11 +6836,13 @@ export const ClientsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('request','Required parameter request was null or undefined when calling clientsCreateClient.');
             }
             const localVarPath = `/Clients/CreateClient`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -6841,16 +6855,26 @@ export const ClientsApiAxiosParamCreator = function (configuration?: Configurati
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -6872,11 +6896,13 @@ export const ClientsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling clientsGetClient.');
             }
             const localVarPath = `/Clients/GetClient`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -6891,14 +6917,19 @@ export const ClientsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -6915,11 +6946,13 @@ export const ClientsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling clientsGetClients.');
             }
             const localVarPath = `/Clients/GetClients`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -6930,14 +6963,19 @@ export const ClientsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -6959,11 +6997,13 @@ export const ClientsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('request','Required parameter request was null or undefined when calling clientsUpdateClient.');
             }
             const localVarPath = `/Clients/UpdateClient`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -6976,16 +7016,26 @@ export const ClientsApiAxiosParamCreator = function (configuration?: Configurati
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -7009,7 +7059,7 @@ export const ClientsApiFp = function(configuration?: Configuration) {
         async clientsCreateClient(xChronosheetsAuth: string, request: InsertClientRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await ClientsApiAxiosParamCreator(configuration).clientsCreateClient(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -7024,7 +7074,7 @@ export const ClientsApiFp = function(configuration?: Configuration) {
         async clientsGetClient(clientId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseClient>> {
             const localVarAxiosArgs = await ClientsApiAxiosParamCreator(configuration).clientsGetClient(clientId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -7038,7 +7088,7 @@ export const ClientsApiFp = function(configuration?: Configuration) {
         async clientsGetClients(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListClient>> {
             const localVarAxiosArgs = await ClientsApiAxiosParamCreator(configuration).clientsGetClients(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -7053,7 +7103,7 @@ export const ClientsApiFp = function(configuration?: Configuration) {
         async clientsUpdateClient(xChronosheetsAuth: string, request: SaveClientRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await ClientsApiAxiosParamCreator(configuration).clientsUpdateClient(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -7169,7 +7219,6 @@ export class ClientsApi extends BaseAPI {
     public clientsUpdateClient(xChronosheetsAuth: string, request: SaveClientRequest, options?: any) {
         return ClientsApiFp(this.configuration).clientsUpdateClient(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -7197,11 +7246,13 @@ export const FileAttachmentsApiAxiosParamCreator = function (configuration?: Con
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling fileAttachmentsDeleteTimesheetFileAttachment.');
             }
             const localVarPath = `/FileAttachments/DeleteTimesheetFileAttachment`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -7216,14 +7267,19 @@ export const FileAttachmentsApiAxiosParamCreator = function (configuration?: Con
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -7245,11 +7301,13 @@ export const FileAttachmentsApiAxiosParamCreator = function (configuration?: Con
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling fileAttachmentsGetFileAttachmentById.');
             }
             const localVarPath = `/FileAttachments/GetFileAttachmentById`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -7264,14 +7322,19 @@ export const FileAttachmentsApiAxiosParamCreator = function (configuration?: Con
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -7300,11 +7363,13 @@ export const FileAttachmentsApiAxiosParamCreator = function (configuration?: Con
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling fileAttachmentsGetMyFileAttachments.');
             }
             const localVarPath = `/FileAttachments/GetMyFileAttachments`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -7335,14 +7400,19 @@ export const FileAttachmentsApiAxiosParamCreator = function (configuration?: Con
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -7366,7 +7436,7 @@ export const FileAttachmentsApiFp = function(configuration?: Configuration) {
         async fileAttachmentsDeleteTimesheetFileAttachment(fileAttachmentId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await FileAttachmentsApiAxiosParamCreator(configuration).fileAttachmentsDeleteTimesheetFileAttachment(fileAttachmentId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -7381,7 +7451,7 @@ export const FileAttachmentsApiFp = function(configuration?: Configuration) {
         async fileAttachmentsGetFileAttachmentById(fileAttachmentId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseTimesheetFileAttachment>> {
             const localVarAxiosArgs = await FileAttachmentsApiAxiosParamCreator(configuration).fileAttachmentsGetFileAttachmentById(fileAttachmentId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -7399,7 +7469,7 @@ export const FileAttachmentsApiFp = function(configuration?: Configuration) {
         async fileAttachmentsGetMyFileAttachments(startDate: string, endDate: string, xChronosheetsAuth: string, skip?: number, take?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseForPaginatedListTimesheetFileAttachment>> {
             const localVarAxiosArgs = await FileAttachmentsApiAxiosParamCreator(configuration).fileAttachmentsGetMyFileAttachments(startDate, endDate, xChronosheetsAuth, skip, take, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -7499,7 +7569,6 @@ export class FileAttachmentsApi extends BaseAPI {
     public fileAttachmentsGetMyFileAttachments(startDate: string, endDate: string, xChronosheetsAuth: string, skip?: number, take?: number, options?: any) {
         return FileAttachmentsApiFp(this.configuration).fileAttachmentsGetMyFileAttachments(startDate, endDate, xChronosheetsAuth, skip, take, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -7527,11 +7596,13 @@ export const FleetApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('request','Required parameter request was null or undefined when calling fleetCreateVehicle.');
             }
             const localVarPath = `/Fleet/CreateVehicle`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -7544,16 +7615,26 @@ export const FleetApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -7575,11 +7656,13 @@ export const FleetApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling fleetDeleteVehicle.');
             }
             const localVarPath = `/Fleet/DeleteVehicle`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -7594,14 +7677,19 @@ export const FleetApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -7623,11 +7711,13 @@ export const FleetApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling fleetGetVehicleById.');
             }
             const localVarPath = `/Fleet/GetVehicleById`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -7642,14 +7732,19 @@ export const FleetApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -7667,11 +7762,13 @@ export const FleetApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling fleetGetVehicles.');
             }
             const localVarPath = `/Fleet/GetVehicles`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -7686,14 +7783,19 @@ export const FleetApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -7715,11 +7817,13 @@ export const FleetApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('request','Required parameter request was null or undefined when calling fleetUpdateVehicle.');
             }
             const localVarPath = `/Fleet/UpdateVehicle`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -7732,16 +7836,26 @@ export const FleetApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -7765,7 +7879,7 @@ export const FleetApiFp = function(configuration?: Configuration) {
         async fleetCreateVehicle(xChronosheetsAuth: string, request: InsertVehicleRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await FleetApiAxiosParamCreator(configuration).fleetCreateVehicle(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -7780,7 +7894,7 @@ export const FleetApiFp = function(configuration?: Configuration) {
         async fleetDeleteVehicle(vehicleId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await FleetApiAxiosParamCreator(configuration).fleetDeleteVehicle(vehicleId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -7795,7 +7909,7 @@ export const FleetApiFp = function(configuration?: Configuration) {
         async fleetGetVehicleById(vehicleId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseFleetVehicle>> {
             const localVarAxiosArgs = await FleetApiAxiosParamCreator(configuration).fleetGetVehicleById(vehicleId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -7810,7 +7924,7 @@ export const FleetApiFp = function(configuration?: Configuration) {
         async fleetGetVehicles(xChronosheetsAuth: string, includeDeleted?: boolean, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListFleetVehicle>> {
             const localVarAxiosArgs = await FleetApiAxiosParamCreator(configuration).fleetGetVehicles(xChronosheetsAuth, includeDeleted, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -7825,7 +7939,7 @@ export const FleetApiFp = function(configuration?: Configuration) {
         async fleetUpdateVehicle(xChronosheetsAuth: string, request: SaveVehicleRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await FleetApiAxiosParamCreator(configuration).fleetUpdateVehicle(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -7967,7 +8081,6 @@ export class FleetApi extends BaseAPI {
     public fleetUpdateVehicle(xChronosheetsAuth: string, request: SaveVehicleRequest, options?: any) {
         return FleetApiFp(this.configuration).fleetUpdateVehicle(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -7995,11 +8108,13 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
                 throw new RequiredError('request','Required parameter request was null or undefined when calling geoFencingCreateGeofence.');
             }
             const localVarPath = `/GeoFencing/CreateGeofence`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -8012,16 +8127,26 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -8043,11 +8168,13 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling geoFencingDeleteGeofence.');
             }
             const localVarPath = `/GeoFencing/DeleteGeofence`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -8062,14 +8189,19 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -8091,11 +8223,13 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling geoFencingGetGeofenceById.');
             }
             const localVarPath = `/GeoFencing/GetGeofenceById`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -8110,14 +8244,19 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -8136,11 +8275,13 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling geoFencingGetGeofences.');
             }
             const localVarPath = `/GeoFencing/GetGeofences`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -8159,14 +8300,19 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -8183,11 +8329,13 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling geoFencingGetGeofencesBasicInfo.');
             }
             const localVarPath = `/GeoFencing/GetGeofencesBasicInfo`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -8198,14 +8346,19 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -8227,11 +8380,13 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
                 throw new RequiredError('request','Required parameter request was null or undefined when calling geoFencingUpdateGeofence.');
             }
             const localVarPath = `/GeoFencing/UpdateGeofence`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -8244,16 +8399,26 @@ export const GeoFencingApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -8277,7 +8442,7 @@ export const GeoFencingApiFp = function(configuration?: Configuration) {
         async geoFencingCreateGeofence(xChronosheetsAuth: string, request: CreateGeoFenceRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await GeoFencingApiAxiosParamCreator(configuration).geoFencingCreateGeofence(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -8292,7 +8457,7 @@ export const GeoFencingApiFp = function(configuration?: Configuration) {
         async geoFencingDeleteGeofence(geofenceId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseGeofence>> {
             const localVarAxiosArgs = await GeoFencingApiAxiosParamCreator(configuration).geoFencingDeleteGeofence(geofenceId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -8307,7 +8472,7 @@ export const GeoFencingApiFp = function(configuration?: Configuration) {
         async geoFencingGetGeofenceById(geofenceId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseGeofence>> {
             const localVarAxiosArgs = await GeoFencingApiAxiosParamCreator(configuration).geoFencingGetGeofenceById(geofenceId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -8323,7 +8488,7 @@ export const GeoFencingApiFp = function(configuration?: Configuration) {
         async geoFencingGetGeofences(xChronosheetsAuth: string, skip?: number, take?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseForPaginatedListExtendedGeofence>> {
             const localVarAxiosArgs = await GeoFencingApiAxiosParamCreator(configuration).geoFencingGetGeofences(xChronosheetsAuth, skip, take, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -8337,7 +8502,7 @@ export const GeoFencingApiFp = function(configuration?: Configuration) {
         async geoFencingGetGeofencesBasicInfo(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseForPaginatedListBasicGeofence>> {
             const localVarAxiosArgs = await GeoFencingApiAxiosParamCreator(configuration).geoFencingGetGeofencesBasicInfo(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -8352,7 +8517,7 @@ export const GeoFencingApiFp = function(configuration?: Configuration) {
         async geoFencingUpdateGeofence(xChronosheetsAuth: string, request: UpdateGeoFenceRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await GeoFencingApiAxiosParamCreator(configuration).geoFencingUpdateGeofence(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -8518,7 +8683,6 @@ export class GeoFencingApi extends BaseAPI {
     public geoFencingUpdateGeofence(xChronosheetsAuth: string, request: UpdateGeoFenceRequest, options?: any) {
         return GeoFencingApiFp(this.configuration).geoFencingUpdateGeofence(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -8546,11 +8710,13 @@ export const JobCodesApiAxiosParamCreator = function (configuration?: Configurat
                 throw new RequiredError('request','Required parameter request was null or undefined when calling jobCodesCreateJobCode.');
             }
             const localVarPath = `/JobCodes/CreateJobCode`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -8563,16 +8729,26 @@ export const JobCodesApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -8594,11 +8770,13 @@ export const JobCodesApiAxiosParamCreator = function (configuration?: Configurat
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling jobCodesDeleteJobCode.');
             }
             const localVarPath = `/JobCodes/DeleteJobCode`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -8613,14 +8791,19 @@ export const JobCodesApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -8642,11 +8825,13 @@ export const JobCodesApiAxiosParamCreator = function (configuration?: Configurat
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling jobCodesGetJobCodeById.');
             }
             const localVarPath = `/JobCodes/GetJobCodeById`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -8661,14 +8846,19 @@ export const JobCodesApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -8685,11 +8875,13 @@ export const JobCodesApiAxiosParamCreator = function (configuration?: Configurat
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling jobCodesGetJobCodes.');
             }
             const localVarPath = `/JobCodes/GetJobCodes`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -8700,14 +8892,19 @@ export const JobCodesApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -8729,11 +8926,13 @@ export const JobCodesApiAxiosParamCreator = function (configuration?: Configurat
                 throw new RequiredError('request','Required parameter request was null or undefined when calling jobCodesUpdateJobCode.');
             }
             const localVarPath = `/JobCodes/UpdateJobCode`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -8746,16 +8945,26 @@ export const JobCodesApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -8779,7 +8988,7 @@ export const JobCodesApiFp = function(configuration?: Configuration) {
         async jobCodesCreateJobCode(xChronosheetsAuth: string, request: InsertJobCodeRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await JobCodesApiAxiosParamCreator(configuration).jobCodesCreateJobCode(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -8794,7 +9003,7 @@ export const JobCodesApiFp = function(configuration?: Configuration) {
         async jobCodesDeleteJobCode(jobCodeId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await JobCodesApiAxiosParamCreator(configuration).jobCodesDeleteJobCode(jobCodeId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -8809,7 +9018,7 @@ export const JobCodesApiFp = function(configuration?: Configuration) {
         async jobCodesGetJobCodeById(jobCodeId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseJobCode>> {
             const localVarAxiosArgs = await JobCodesApiAxiosParamCreator(configuration).jobCodesGetJobCodeById(jobCodeId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -8823,7 +9032,7 @@ export const JobCodesApiFp = function(configuration?: Configuration) {
         async jobCodesGetJobCodes(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListJobCode>> {
             const localVarAxiosArgs = await JobCodesApiAxiosParamCreator(configuration).jobCodesGetJobCodes(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -8838,7 +9047,7 @@ export const JobCodesApiFp = function(configuration?: Configuration) {
         async jobCodesUpdateJobCode(xChronosheetsAuth: string, request: UpdateJobCodeRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await JobCodesApiAxiosParamCreator(configuration).jobCodesUpdateJobCode(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -8978,7 +9187,6 @@ export class JobCodesApi extends BaseAPI {
     public jobCodesUpdateJobCode(xChronosheetsAuth: string, request: UpdateJobCodeRequest, options?: any) {
         return JobCodesApiFp(this.configuration).jobCodesUpdateJobCode(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -9001,11 +9209,13 @@ export const OrganisationApiAxiosParamCreator = function (configuration?: Config
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling organisationGetOrganisation.');
             }
             const localVarPath = `/Organisation/GetOrganisation`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -9016,14 +9226,19 @@ export const OrganisationApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -9045,11 +9260,13 @@ export const OrganisationApiAxiosParamCreator = function (configuration?: Config
                 throw new RequiredError('request','Required parameter request was null or undefined when calling organisationUpdateOrganisation.');
             }
             const localVarPath = `/Organisation/UpdateOrganisation`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -9062,16 +9279,26 @@ export const OrganisationApiAxiosParamCreator = function (configuration?: Config
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -9094,7 +9321,7 @@ export const OrganisationApiFp = function(configuration?: Configuration) {
         async organisationGetOrganisation(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseOrganisation>> {
             const localVarAxiosArgs = await OrganisationApiAxiosParamCreator(configuration).organisationGetOrganisation(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -9109,7 +9336,7 @@ export const OrganisationApiFp = function(configuration?: Configuration) {
         async organisationUpdateOrganisation(xChronosheetsAuth: string, request: UpdateOrganisationRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseUpdateOrganisationResponse>> {
             const localVarAxiosArgs = await OrganisationApiAxiosParamCreator(configuration).organisationUpdateOrganisation(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -9177,7 +9404,6 @@ export class OrganisationApi extends BaseAPI {
     public organisationUpdateOrganisation(xChronosheetsAuth: string, request: UpdateOrganisationRequest, options?: any) {
         return OrganisationApiFp(this.configuration).organisationUpdateOrganisation(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -9205,11 +9431,13 @@ export const OrganisationGroupUsersApiAxiosParamCreator = function (configuratio
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling organisationGroupUsersGetOrganisationGroupUsers.');
             }
             const localVarPath = `/OrganisationGroupUsers/GetOrganisationGroupUsers`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -9224,14 +9452,19 @@ export const OrganisationGroupUsersApiAxiosParamCreator = function (configuratio
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -9253,11 +9486,13 @@ export const OrganisationGroupUsersApiAxiosParamCreator = function (configuratio
                 throw new RequiredError('request','Required parameter request was null or undefined when calling organisationGroupUsersUpdateOrganisationGroupUsers.');
             }
             const localVarPath = `/OrganisationGroupUsers/UpdateOrganisationGroupUsers`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -9270,16 +9505,26 @@ export const OrganisationGroupUsersApiAxiosParamCreator = function (configuratio
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -9303,7 +9548,7 @@ export const OrganisationGroupUsersApiFp = function(configuration?: Configuratio
         async organisationGroupUsersGetOrganisationGroupUsers(orgGroupId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListUserForManagement>> {
             const localVarAxiosArgs = await OrganisationGroupUsersApiAxiosParamCreator(configuration).organisationGroupUsersGetOrganisationGroupUsers(orgGroupId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -9318,7 +9563,7 @@ export const OrganisationGroupUsersApiFp = function(configuration?: Configuratio
         async organisationGroupUsersUpdateOrganisationGroupUsers(xChronosheetsAuth: string, request: SetOrganisationGroupUsersRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await OrganisationGroupUsersApiAxiosParamCreator(configuration).organisationGroupUsersUpdateOrganisationGroupUsers(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -9388,7 +9633,6 @@ export class OrganisationGroupUsersApi extends BaseAPI {
     public organisationGroupUsersUpdateOrganisationGroupUsers(xChronosheetsAuth: string, request: SetOrganisationGroupUsersRequest, options?: any) {
         return OrganisationGroupUsersApiFp(this.configuration).organisationGroupUsersUpdateOrganisationGroupUsers(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -9416,11 +9660,13 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
                 throw new RequiredError('request','Required parameter request was null or undefined when calling organisationGroupsCreateOrganisationGroup.');
             }
             const localVarPath = `/OrganisationGroups/CreateOrganisationGroup`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -9433,16 +9679,26 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -9463,11 +9719,13 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling organisationGroupsDeleteOrganisationGroup.');
             }
             const localVarPath = `/OrganisationGroups/DeleteOrganisationGroup`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -9482,14 +9740,19 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -9511,11 +9774,13 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling organisationGroupsGetOrganisationGroup.');
             }
             const localVarPath = `/OrganisationGroups/GetOrganisationGroup`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -9530,14 +9795,19 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -9554,11 +9824,13 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling organisationGroupsGetOrganisationGroups.');
             }
             const localVarPath = `/OrganisationGroups/GetOrganisationGroups`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -9569,14 +9841,19 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -9598,11 +9875,13 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling organisationGroupsGetOrganisationGroupsForJob.');
             }
             const localVarPath = `/OrganisationGroups/GetOrganisationGroupsForJob`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -9617,14 +9896,19 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -9646,11 +9930,13 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling organisationGroupsGetOrganisationGroupsForVehicle.');
             }
             const localVarPath = `/OrganisationGroups/GetOrganisationGroupsForVehicle`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -9665,14 +9951,19 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -9694,11 +9985,13 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
                 throw new RequiredError('request','Required parameter request was null or undefined when calling organisationGroupsUpdateOrganisationGroup.');
             }
             const localVarPath = `/OrganisationGroups/UpdateOrganisationGroup`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -9711,16 +10004,26 @@ export const OrganisationGroupsApiAxiosParamCreator = function (configuration?: 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -9744,7 +10047,7 @@ export const OrganisationGroupsApiFp = function(configuration?: Configuration) {
         async organisationGroupsCreateOrganisationGroup(xChronosheetsAuth: string, request: InsertOrganisationGroupRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await OrganisationGroupsApiAxiosParamCreator(configuration).organisationGroupsCreateOrganisationGroup(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -9758,7 +10061,7 @@ export const OrganisationGroupsApiFp = function(configuration?: Configuration) {
         async organisationGroupsDeleteOrganisationGroup(organisationGroupId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await OrganisationGroupsApiAxiosParamCreator(configuration).organisationGroupsDeleteOrganisationGroup(organisationGroupId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -9773,7 +10076,7 @@ export const OrganisationGroupsApiFp = function(configuration?: Configuration) {
         async organisationGroupsGetOrganisationGroup(organisationGroupId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseOrganisationGroup>> {
             const localVarAxiosArgs = await OrganisationGroupsApiAxiosParamCreator(configuration).organisationGroupsGetOrganisationGroup(organisationGroupId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -9787,7 +10090,7 @@ export const OrganisationGroupsApiFp = function(configuration?: Configuration) {
         async organisationGroupsGetOrganisationGroups(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListOrganisationGroup>> {
             const localVarAxiosArgs = await OrganisationGroupsApiAxiosParamCreator(configuration).organisationGroupsGetOrganisationGroups(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -9802,7 +10105,7 @@ export const OrganisationGroupsApiFp = function(configuration?: Configuration) {
         async organisationGroupsGetOrganisationGroupsForJob(jobId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListOrganisationGroup>> {
             const localVarAxiosArgs = await OrganisationGroupsApiAxiosParamCreator(configuration).organisationGroupsGetOrganisationGroupsForJob(jobId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -9817,7 +10120,7 @@ export const OrganisationGroupsApiFp = function(configuration?: Configuration) {
         async organisationGroupsGetOrganisationGroupsForVehicle(vehicleId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListOrganisationGroup>> {
             const localVarAxiosArgs = await OrganisationGroupsApiAxiosParamCreator(configuration).organisationGroupsGetOrganisationGroupsForVehicle(vehicleId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -9832,7 +10135,7 @@ export const OrganisationGroupsApiFp = function(configuration?: Configuration) {
         async organisationGroupsUpdateOrganisationGroup(xChronosheetsAuth: string, request: SaveOrganisationGroupRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await OrganisationGroupsApiAxiosParamCreator(configuration).organisationGroupsUpdateOrganisationGroup(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -10018,7 +10321,6 @@ export class OrganisationGroupsApi extends BaseAPI {
     public organisationGroupsUpdateOrganisationGroup(xChronosheetsAuth: string, request: SaveOrganisationGroupRequest, options?: any) {
         return OrganisationGroupsApiFp(this.configuration).organisationGroupsUpdateOrganisationGroup(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -10046,11 +10348,13 @@ export const ProjectsApiAxiosParamCreator = function (configuration?: Configurat
                 throw new RequiredError('request','Required parameter request was null or undefined when calling projectsCreateProject.');
             }
             const localVarPath = `/Projects/CreateProject`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -10063,16 +10367,26 @@ export const ProjectsApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -10094,11 +10408,13 @@ export const ProjectsApiAxiosParamCreator = function (configuration?: Configurat
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling projectsGetProjectById.');
             }
             const localVarPath = `/Projects/GetProjectById`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -10113,14 +10429,19 @@ export const ProjectsApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -10142,11 +10463,13 @@ export const ProjectsApiAxiosParamCreator = function (configuration?: Configurat
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling projectsGetProjectsForClient.');
             }
             const localVarPath = `/Projects/GetProjectsForClient`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -10161,14 +10484,19 @@ export const ProjectsApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -10190,11 +10518,13 @@ export const ProjectsApiAxiosParamCreator = function (configuration?: Configurat
                 throw new RequiredError('request','Required parameter request was null or undefined when calling projectsUpdateProject.');
             }
             const localVarPath = `/Projects/UpdateProject`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -10207,16 +10537,26 @@ export const ProjectsApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -10240,7 +10580,7 @@ export const ProjectsApiFp = function(configuration?: Configuration) {
         async projectsCreateProject(xChronosheetsAuth: string, request: InsertProjectRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await ProjectsApiAxiosParamCreator(configuration).projectsCreateProject(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -10255,7 +10595,7 @@ export const ProjectsApiFp = function(configuration?: Configuration) {
         async projectsGetProjectById(projectId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseProject>> {
             const localVarAxiosArgs = await ProjectsApiAxiosParamCreator(configuration).projectsGetProjectById(projectId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -10270,7 +10610,7 @@ export const ProjectsApiFp = function(configuration?: Configuration) {
         async projectsGetProjectsForClient(clientId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListProject>> {
             const localVarAxiosArgs = await ProjectsApiAxiosParamCreator(configuration).projectsGetProjectsForClient(clientId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -10285,7 +10625,7 @@ export const ProjectsApiFp = function(configuration?: Configuration) {
         async projectsUpdateProject(xChronosheetsAuth: string, request: UpdateProjectRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await ProjectsApiAxiosParamCreator(configuration).projectsUpdateProject(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -10403,7 +10743,6 @@ export class ProjectsApi extends BaseAPI {
     public projectsUpdateProject(xChronosheetsAuth: string, request: UpdateProjectRequest, options?: any) {
         return ProjectsApiFp(this.configuration).projectsUpdateProject(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -10438,11 +10777,13 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling reportsGetAllChartsDataAdmin.');
             }
             const localVarPath = `/Reports/GetAllChartsDataAdmin`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -10473,14 +10814,19 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -10507,11 +10853,13 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling reportsGetAllChartsDataUser.');
             }
             const localVarPath = `/Reports/GetAllChartsDataUser`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -10534,14 +10882,19 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -10569,11 +10922,13 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling reportsGetFleetSummaryAdmin.');
             }
             const localVarPath = `/Reports/GetFleetSummaryAdmin`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -10600,14 +10955,19 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -10629,11 +10989,13 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling reportsGetOrgTripById.');
             }
             const localVarPath = `/Reports/GetOrgTripById`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -10648,14 +11010,19 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -10685,11 +11052,13 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling reportsGetOrganisationTimesheetFileAttachments.');
             }
             const localVarPath = `/Reports/GetOrganisationTimesheetFileAttachments`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -10724,14 +11093,19 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -10762,11 +11136,13 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling reportsGetOrganisationTranscripts.');
             }
             const localVarPath = `/Reports/GetOrganisationTranscripts`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -10805,14 +11181,19 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -10842,11 +11223,13 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling reportsGetOrganisationTrips.');
             }
             const localVarPath = `/Reports/GetOrganisationTrips`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -10881,14 +11264,19 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -10920,11 +11308,13 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling reportsGetRawDataAdmin.');
             }
             const localVarPath = `/Reports/GetRawDataAdmin`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -10967,14 +11357,19 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -11002,11 +11397,13 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling reportsProjectCostingsAdmin.');
             }
             const localVarPath = `/Reports/ProjectCostingsAdmin`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -11033,14 +11430,19 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -11067,11 +11469,13 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling reportsUserJobsOverTime.');
             }
             const localVarPath = `/Reports/UserJobsOverTime`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -11094,14 +11498,19 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -11128,7 +11537,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
         async reportsGetAllChartsDataAdmin(startDate: string, endDate: string, xChronosheetsAuth: string, userIds?: string, forceOnlyThisChart?: 'NotForced' | 'SeriesJobCodes' | 'SeriesClients' | 'SeriesProjects' | 'SeriesTasks' | 'TotalsClients' | 'TotalsJobCodes' | 'TotalsProjects' | 'TotalsTasks', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseCombinedReportsData>> {
             const localVarAxiosArgs = await ReportsApiAxiosParamCreator(configuration).reportsGetAllChartsDataAdmin(startDate, endDate, xChronosheetsAuth, userIds, forceOnlyThisChart, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11144,7 +11553,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
         async reportsGetAllChartsDataUser(startDate: string, endDate: string, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseCombinedReportsData>> {
             const localVarAxiosArgs = await ReportsApiAxiosParamCreator(configuration).reportsGetAllChartsDataUser(startDate, endDate, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11161,7 +11570,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
         async reportsGetFleetSummaryAdmin(startDate: string, endDate: string, xChronosheetsAuth: string, userIds?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListFleetSummaryReportItem>> {
             const localVarAxiosArgs = await ReportsApiAxiosParamCreator(configuration).reportsGetFleetSummaryAdmin(startDate, endDate, xChronosheetsAuth, userIds, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11176,7 +11585,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
         async reportsGetOrgTripById(tripId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseTrip>> {
             const localVarAxiosArgs = await ReportsApiAxiosParamCreator(configuration).reportsGetOrgTripById(tripId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11195,7 +11604,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
         async reportsGetOrganisationTimesheetFileAttachments(startDate: string, endDate: string, xChronosheetsAuth: string, skip?: number, take?: number, userIds?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseForPaginatedListOrgReportTimesheetFileAttachment>> {
             const localVarAxiosArgs = await ReportsApiAxiosParamCreator(configuration).reportsGetOrganisationTimesheetFileAttachments(startDate, endDate, xChronosheetsAuth, skip, take, userIds, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11215,7 +11624,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
         async reportsGetOrganisationTranscripts(startDate: string, endDate: string, xChronosheetsAuth: string, skip?: number, take?: number, userIds?: string, keywords?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseForPaginatedListOrgReportTranscript>> {
             const localVarAxiosArgs = await ReportsApiAxiosParamCreator(configuration).reportsGetOrganisationTranscripts(startDate, endDate, xChronosheetsAuth, skip, take, userIds, keywords, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11234,7 +11643,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
         async reportsGetOrganisationTrips(startDate: string, endDate: string, xChronosheetsAuth: string, skip?: number, take?: number, userIds?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseForPaginatedListOrgReportTrip>> {
             const localVarAxiosArgs = await ReportsApiAxiosParamCreator(configuration).reportsGetOrganisationTrips(startDate, endDate, xChronosheetsAuth, skip, take, userIds, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11255,7 +11664,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
         async reportsGetRawDataAdmin(startDate: string, endDate: string, xChronosheetsAuth: string, userIds?: string, sort?: 'EmailAddress' | 'JobCode' | 'TaskName' | 'ClientName' | 'ProjectName' | 'StartDate' | 'EndDate' | 'SpanSeconds' | 'Description' | 'PayAmount' | 'PayOvertimeAmount' | 'TripCost' | 'TripDistanceMeters' | 'Username', order?: 'Ascending' | 'Descending', skip?: number, take?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseForPaginatedListRawReportItem>> {
             const localVarAxiosArgs = await ReportsApiAxiosParamCreator(configuration).reportsGetRawDataAdmin(startDate, endDate, xChronosheetsAuth, userIds, sort, order, skip, take, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11272,7 +11681,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
         async reportsProjectCostingsAdmin(startDate: string, endDate: string, xChronosheetsAuth: string, userIds?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListProjectCostingReportItem>> {
             const localVarAxiosArgs = await ReportsApiAxiosParamCreator(configuration).reportsProjectCostingsAdmin(startDate, endDate, xChronosheetsAuth, userIds, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11288,7 +11697,7 @@ export const ReportsApiFp = function(configuration?: Configuration) {
         async reportsUserJobsOverTime(startDate: string, endDate: string, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListJobSeriesReportItem>> {
             const localVarAxiosArgs = await ReportsApiAxiosParamCreator(configuration).reportsUserJobsOverTime(startDate, endDate, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11606,7 +12015,6 @@ export class ReportsApi extends BaseAPI {
     public reportsUserJobsOverTime(startDate: string, endDate: string, xChronosheetsAuth: string, options?: any) {
         return ReportsApiFp(this.configuration).reportsUserJobsOverTime(startDate, endDate, xChronosheetsAuth, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -11634,11 +12042,13 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('request','Required parameter request was null or undefined when calling tasksCreateTask.');
             }
             const localVarPath = `/Tasks/CreateTask`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -11651,16 +12061,26 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -11682,11 +12102,13 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling tasksDeleteTask.');
             }
             const localVarPath = `/Tasks/DeleteTask`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -11701,14 +12123,19 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -11730,11 +12157,13 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling tasksGetTaskById.');
             }
             const localVarPath = `/Tasks/GetTaskById`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -11749,14 +12178,19 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -11773,11 +12207,13 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling tasksGetTasks.');
             }
             const localVarPath = `/Tasks/GetTasks`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -11788,14 +12224,19 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -11817,11 +12258,13 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling tasksGetTasksForJob.');
             }
             const localVarPath = `/Tasks/GetTasksForJob`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -11836,14 +12279,19 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -11865,11 +12313,13 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('request','Required parameter request was null or undefined when calling tasksUpdateTask.');
             }
             const localVarPath = `/Tasks/UpdateTask`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -11882,16 +12332,26 @@ export const TasksApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -11915,7 +12375,7 @@ export const TasksApiFp = function(configuration?: Configuration) {
         async tasksCreateTask(xChronosheetsAuth: string, request: InsertTaskRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await TasksApiAxiosParamCreator(configuration).tasksCreateTask(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11930,7 +12390,7 @@ export const TasksApiFp = function(configuration?: Configuration) {
         async tasksDeleteTask(taskId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await TasksApiAxiosParamCreator(configuration).tasksDeleteTask(taskId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11945,7 +12405,7 @@ export const TasksApiFp = function(configuration?: Configuration) {
         async tasksGetTaskById(taskId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseTimesheetTask>> {
             const localVarAxiosArgs = await TasksApiAxiosParamCreator(configuration).tasksGetTaskById(taskId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11959,7 +12419,7 @@ export const TasksApiFp = function(configuration?: Configuration) {
         async tasksGetTasks(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListTimesheetTask>> {
             const localVarAxiosArgs = await TasksApiAxiosParamCreator(configuration).tasksGetTasks(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11974,7 +12434,7 @@ export const TasksApiFp = function(configuration?: Configuration) {
         async tasksGetTasksForJob(jobId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListTimesheetTask>> {
             const localVarAxiosArgs = await TasksApiAxiosParamCreator(configuration).tasksGetTasksForJob(jobId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -11989,7 +12449,7 @@ export const TasksApiFp = function(configuration?: Configuration) {
         async tasksUpdateTask(xChronosheetsAuth: string, request: UpdateTaskRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await TasksApiAxiosParamCreator(configuration).tasksUpdateTask(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -12153,7 +12613,6 @@ export class TasksApi extends BaseAPI {
     public tasksUpdateTask(xChronosheetsAuth: string, request: UpdateTaskRequest, options?: any) {
         return TasksApiFp(this.configuration).tasksUpdateTask(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -12181,11 +12640,13 @@ export const TimesheetAutomationApiAxiosParamCreator = function (configuration?:
                 throw new RequiredError('request','Required parameter request was null or undefined when calling timesheetAutomationCreateAutomationStep.');
             }
             const localVarPath = `/TimesheetAutomation/CreateAutomationStep`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -12198,16 +12659,26 @@ export const TimesheetAutomationApiAxiosParamCreator = function (configuration?:
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -12251,11 +12722,13 @@ export const TimesheetAutomationApiAxiosParamCreator = function (configuration?:
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling timesheetAutomationGetTimesheetAutomationAuditTrail.');
             }
             const localVarPath = `/TimesheetAutomation/GetTimesheetAutomationAuditTrail`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -12294,14 +12767,19 @@ export const TimesheetAutomationApiAxiosParamCreator = function (configuration?:
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -12325,7 +12803,7 @@ export const TimesheetAutomationApiFp = function(configuration?: Configuration) 
         async timesheetAutomationCreateAutomationStep(xChronosheetsAuth: string, request: CreateAutomationStepRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await TimesheetAutomationApiAxiosParamCreator(configuration).timesheetAutomationCreateAutomationStep(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -12346,7 +12824,7 @@ export const TimesheetAutomationApiFp = function(configuration?: Configuration) 
         async timesheetAutomationGetTimesheetAutomationAuditTrail(geofenceId: number, nfcId: number, userId: number, sort: 'UserName' | 'AutomationActionType' | 'ClientDateTime' | 'IsProcessed', order: 'Ascending' | 'Descending', xChronosheetsAuth: string, skip?: number, take?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseForPaginatedListTimesheetAutomationWithOrgAndGeofence>> {
             const localVarAxiosArgs = await TimesheetAutomationApiAxiosParamCreator(configuration).timesheetAutomationGetTimesheetAutomationAuditTrail(geofenceId, nfcId, userId, sort, order, xChronosheetsAuth, skip, take, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -12428,7 +12906,6 @@ export class TimesheetAutomationApi extends BaseAPI {
     public timesheetAutomationGetTimesheetAutomationAuditTrail(geofenceId: number, nfcId: number, userId: number, sort: 'UserName' | 'AutomationActionType' | 'ClientDateTime' | 'IsProcessed', order: 'Ascending' | 'Descending', xChronosheetsAuth: string, skip?: number, take?: number, options?: any) {
         return TimesheetAutomationApiFp(this.configuration).timesheetAutomationGetTimesheetAutomationAuditTrail(geofenceId, nfcId, userId, sort, order, xChronosheetsAuth, skip, take, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -12456,11 +12933,13 @@ export const TimesheetsApiAxiosParamCreator = function (configuration?: Configur
                 throw new RequiredError('request','Required parameter request was null or undefined when calling timesheetsCreateSingleTimesheet.');
             }
             const localVarPath = `/Timesheets/CreateSingleTimesheet`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -12473,16 +12952,26 @@ export const TimesheetsApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -12504,11 +12993,13 @@ export const TimesheetsApiAxiosParamCreator = function (configuration?: Configur
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling timesheetsDeleteTimesheet.');
             }
             const localVarPath = `/Timesheets/DeleteTimesheet`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -12523,14 +13014,19 @@ export const TimesheetsApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -12557,11 +13053,13 @@ export const TimesheetsApiAxiosParamCreator = function (configuration?: Configur
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling timesheetsGetTimesheets.');
             }
             const localVarPath = `/Timesheets/GetTimesheets`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -12584,14 +13082,19 @@ export const TimesheetsApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -12613,11 +13116,13 @@ export const TimesheetsApiAxiosParamCreator = function (configuration?: Configur
                 throw new RequiredError('request','Required parameter request was null or undefined when calling timesheetsUpdateTimesheets.');
             }
             const localVarPath = `/Timesheets/UpdateTimesheets`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -12630,16 +13135,26 @@ export const TimesheetsApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -12663,7 +13178,7 @@ export const TimesheetsApiFp = function(configuration?: Configuration) {
         async timesheetsCreateSingleTimesheet(xChronosheetsAuth: string, request: Timesheet, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await TimesheetsApiAxiosParamCreator(configuration).timesheetsCreateSingleTimesheet(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -12678,7 +13193,7 @@ export const TimesheetsApiFp = function(configuration?: Configuration) {
         async timesheetsDeleteTimesheet(timesheetId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await TimesheetsApiAxiosParamCreator(configuration).timesheetsDeleteTimesheet(timesheetId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -12694,7 +13209,7 @@ export const TimesheetsApiFp = function(configuration?: Configuration) {
         async timesheetsGetTimesheets(startDate: string, endDate: string, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListTimesheet>> {
             const localVarAxiosArgs = await TimesheetsApiAxiosParamCreator(configuration).timesheetsGetTimesheets(startDate, endDate, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -12709,7 +13224,7 @@ export const TimesheetsApiFp = function(configuration?: Configuration) {
         async timesheetsUpdateTimesheets(xChronosheetsAuth: string, request: BatchUpdateTimesheetRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListInt32>> {
             const localVarAxiosArgs = await TimesheetsApiAxiosParamCreator(configuration).timesheetsUpdateTimesheets(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -12829,7 +13344,6 @@ export class TimesheetsApi extends BaseAPI {
     public timesheetsUpdateTimesheets(xChronosheetsAuth: string, request: BatchUpdateTimesheetRequest, options?: any) {
         return TimesheetsApiFp(this.configuration).timesheetsUpdateTimesheets(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -12857,11 +13371,13 @@ export const TranscriptsApiAxiosParamCreator = function (configuration?: Configu
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling transcriptsGetMyTranscript.');
             }
             const localVarPath = `/Transcripts/GetMyTranscript`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -12876,14 +13392,19 @@ export const TranscriptsApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -12913,11 +13434,13 @@ export const TranscriptsApiAxiosParamCreator = function (configuration?: Configu
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling transcriptsGetMyTranscripts.');
             }
             const localVarPath = `/Transcripts/GetMyTranscripts`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -12952,14 +13475,19 @@ export const TranscriptsApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -12983,7 +13511,7 @@ export const TranscriptsApiFp = function(configuration?: Configuration) {
         async transcriptsGetMyTranscript(fileAttachmentId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseTranscription>> {
             const localVarAxiosArgs = await TranscriptsApiAxiosParamCreator(configuration).transcriptsGetMyTranscript(fileAttachmentId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -13002,7 +13530,7 @@ export const TranscriptsApiFp = function(configuration?: Configuration) {
         async transcriptsGetMyTranscripts(startDate: string, endDate: string, xChronosheetsAuth: string, skip?: number, take?: number, keyword?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseForPaginatedListOrgReportTranscript>> {
             const localVarAxiosArgs = await TranscriptsApiAxiosParamCreator(configuration).transcriptsGetMyTranscripts(startDate, endDate, xChronosheetsAuth, skip, take, keyword, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -13080,7 +13608,6 @@ export class TranscriptsApi extends BaseAPI {
     public transcriptsGetMyTranscripts(startDate: string, endDate: string, xChronosheetsAuth: string, skip?: number, take?: number, keyword?: string, options?: any) {
         return TranscriptsApiFp(this.configuration).transcriptsGetMyTranscripts(startDate, endDate, xChronosheetsAuth, skip, take, keyword, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -13108,11 +13635,13 @@ export const TripsApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('request','Required parameter request was null or undefined when calling tripsCreateTrip.');
             }
             const localVarPath = `/Trips/CreateTrip`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -13125,16 +13654,26 @@ export const TripsApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -13156,11 +13695,13 @@ export const TripsApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling tripsGetMyTripById.');
             }
             const localVarPath = `/Trips/GetMyTripById`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -13175,14 +13716,19 @@ export const TripsApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -13212,11 +13758,13 @@ export const TripsApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling tripsGetMyTrips.');
             }
             const localVarPath = `/Trips/GetMyTrips`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -13251,14 +13799,19 @@ export const TripsApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -13282,7 +13835,7 @@ export const TripsApiFp = function(configuration?: Configuration) {
         async tripsCreateTrip(xChronosheetsAuth: string, request: CreateTripRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await TripsApiAxiosParamCreator(configuration).tripsCreateTrip(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -13297,7 +13850,7 @@ export const TripsApiFp = function(configuration?: Configuration) {
         async tripsGetMyTripById(tripId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseTrip>> {
             const localVarAxiosArgs = await TripsApiAxiosParamCreator(configuration).tripsGetMyTripById(tripId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -13316,7 +13869,7 @@ export const TripsApiFp = function(configuration?: Configuration) {
         async tripsGetMyTrips(startDate: string, endDate: string, xChronosheetsAuth: string, skip?: number, take?: number, vehicleId?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseForPaginatedListTrip>> {
             const localVarAxiosArgs = await TripsApiAxiosParamCreator(configuration).tripsGetMyTrips(startDate, endDate, xChronosheetsAuth, skip, take, vehicleId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -13418,7 +13971,6 @@ export class TripsApi extends BaseAPI {
     public tripsGetMyTrips(startDate: string, endDate: string, xChronosheetsAuth: string, skip?: number, take?: number, vehicleId?: number, options?: any) {
         return TripsApiFp(this.configuration).tripsGetMyTrips(startDate, endDate, xChronosheetsAuth, skip, take, vehicleId, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -13446,11 +13998,13 @@ export const UserJobFavouritesApiAxiosParamCreator = function (configuration?: C
                 throw new RequiredError('request','Required parameter request was null or undefined when calling userJobFavouritesCreateJobFavourite.');
             }
             const localVarPath = `/UserJobFavourites/CreateJobFavourite`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -13463,16 +14017,26 @@ export const UserJobFavouritesApiAxiosParamCreator = function (configuration?: C
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -13494,11 +14058,13 @@ export const UserJobFavouritesApiAxiosParamCreator = function (configuration?: C
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling userJobFavouritesDeleteJobFavourite.');
             }
             const localVarPath = `/UserJobFavourites/DeleteJobFavourite`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -13513,14 +14079,19 @@ export const UserJobFavouritesApiAxiosParamCreator = function (configuration?: C
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -13537,11 +14108,13 @@ export const UserJobFavouritesApiAxiosParamCreator = function (configuration?: C
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling userJobFavouritesGetJobFavourites.');
             }
             const localVarPath = `/UserJobFavourites/GetJobFavourites`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -13552,14 +14125,19 @@ export const UserJobFavouritesApiAxiosParamCreator = function (configuration?: C
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -13583,7 +14161,7 @@ export const UserJobFavouritesApiFp = function(configuration?: Configuration) {
         async userJobFavouritesCreateJobFavourite(xChronosheetsAuth: string, request: InsertUserJobFavouriteRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await UserJobFavouritesApiAxiosParamCreator(configuration).userJobFavouritesCreateJobFavourite(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -13598,7 +14176,7 @@ export const UserJobFavouritesApiFp = function(configuration?: Configuration) {
         async userJobFavouritesDeleteJobFavourite(jobId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await UserJobFavouritesApiAxiosParamCreator(configuration).userJobFavouritesDeleteJobFavourite(jobId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -13612,7 +14190,7 @@ export const UserJobFavouritesApiFp = function(configuration?: Configuration) {
         async userJobFavouritesGetJobFavourites(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListUserJobFavourite>> {
             const localVarAxiosArgs = await UserJobFavouritesApiAxiosParamCreator(configuration).userJobFavouritesGetJobFavourites(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -13704,7 +14282,6 @@ export class UserJobFavouritesApi extends BaseAPI {
     public userJobFavouritesGetJobFavourites(xChronosheetsAuth: string, options?: any) {
         return UserJobFavouritesApiFp(this.configuration).userJobFavouritesGetJobFavourites(xChronosheetsAuth, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -13732,11 +14309,13 @@ export const UserPayRatesApiAxiosParamCreator = function (configuration?: Config
                 throw new RequiredError('request','Required parameter request was null or undefined when calling userPayRatesCreatePayRate.');
             }
             const localVarPath = `/UserPayRates/CreatePayRate`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -13749,16 +14328,26 @@ export const UserPayRatesApiAxiosParamCreator = function (configuration?: Config
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -13780,11 +14369,13 @@ export const UserPayRatesApiAxiosParamCreator = function (configuration?: Config
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling userPayRatesGetPayRates.');
             }
             const localVarPath = `/UserPayRates/GetPayRates`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -13799,14 +14390,19 @@ export const UserPayRatesApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -13830,7 +14426,7 @@ export const UserPayRatesApiFp = function(configuration?: Configuration) {
         async userPayRatesCreatePayRate(xChronosheetsAuth: string, request: InsertUserHourlyRateRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInt32>> {
             const localVarAxiosArgs = await UserPayRatesApiAxiosParamCreator(configuration).userPayRatesCreatePayRate(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -13845,7 +14441,7 @@ export const UserPayRatesApiFp = function(configuration?: Configuration) {
         async userPayRatesGetPayRates(userId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListUserHourlyRate>> {
             const localVarAxiosArgs = await UserPayRatesApiAxiosParamCreator(configuration).userPayRatesGetPayRates(userId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -13915,7 +14511,6 @@ export class UserPayRatesApi extends BaseAPI {
     public userPayRatesGetPayRates(userId: number, xChronosheetsAuth: string, options?: any) {
         return UserPayRatesApiFp(this.configuration).userPayRatesGetPayRates(userId, xChronosheetsAuth, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -13938,11 +14533,13 @@ export const UserProfileApiAxiosParamCreator = function (configuration?: Configu
                 throw new RequiredError('request','Required parameter request was null or undefined when calling userProfileDoLogin.');
             }
             const localVarPath = `/UserProfile/DoLogin`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -13951,16 +14548,26 @@ export const UserProfileApiAxiosParamCreator = function (configuration?: Configu
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -13977,11 +14584,13 @@ export const UserProfileApiAxiosParamCreator = function (configuration?: Configu
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling userProfileDoLogout.');
             }
             const localVarPath = `/UserProfile/DoLogout`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -13992,14 +14601,19 @@ export const UserProfileApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -14016,11 +14630,13 @@ export const UserProfileApiAxiosParamCreator = function (configuration?: Configu
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling userProfileGetMyProfile.');
             }
             const localVarPath = `/UserProfile/GetMyProfile`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -14031,14 +14647,19 @@ export const UserProfileApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -14055,11 +14676,13 @@ export const UserProfileApiAxiosParamCreator = function (configuration?: Configu
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling userProfileKeepSessionAlive.');
             }
             const localVarPath = `/UserProfile/KeepSessionAlive`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -14070,14 +14693,19 @@ export const UserProfileApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -14099,11 +14727,13 @@ export const UserProfileApiAxiosParamCreator = function (configuration?: Configu
                 throw new RequiredError('request','Required parameter request was null or undefined when calling userProfileUpdateMyProfile.');
             }
             const localVarPath = `/UserProfile/UpdateMyProfile`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -14116,16 +14746,26 @@ export const UserProfileApiAxiosParamCreator = function (configuration?: Configu
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -14148,7 +14788,7 @@ export const UserProfileApiFp = function(configuration?: Configuration) {
         async userProfileDoLogin(request: DoLoginRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseDoLoginResponse>> {
             const localVarAxiosArgs = await UserProfileApiAxiosParamCreator(configuration).userProfileDoLogin(request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -14162,7 +14802,7 @@ export const UserProfileApiFp = function(configuration?: Configuration) {
         async userProfileDoLogout(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await UserProfileApiAxiosParamCreator(configuration).userProfileDoLogout(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -14176,7 +14816,7 @@ export const UserProfileApiFp = function(configuration?: Configuration) {
         async userProfileGetMyProfile(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseUserProfile>> {
             const localVarAxiosArgs = await UserProfileApiAxiosParamCreator(configuration).userProfileGetMyProfile(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -14190,7 +14830,7 @@ export const UserProfileApiFp = function(configuration?: Configuration) {
         async userProfileKeepSessionAlive(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await UserProfileApiAxiosParamCreator(configuration).userProfileKeepSessionAlive(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -14205,7 +14845,7 @@ export const UserProfileApiFp = function(configuration?: Configuration) {
         async userProfileUpdateMyProfile(xChronosheetsAuth: string, request: UpdateMyProfileRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseUpdateProfileResponse>> {
             const localVarAxiosArgs = await UserProfileApiAxiosParamCreator(configuration).userProfileUpdateMyProfile(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -14339,7 +14979,6 @@ export class UserProfileApi extends BaseAPI {
     public userProfileUpdateMyProfile(xChronosheetsAuth: string, request: UpdateMyProfileRequest, options?: any) {
         return UserProfileApiFp(this.configuration).userProfileUpdateMyProfile(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -14367,11 +15006,13 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('request','Required parameter request was null or undefined when calling usersCreateTimesheetUser.');
             }
             const localVarPath = `/Users/CreateTimesheetUser`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -14384,16 +15025,26 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -14415,11 +15066,13 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling usersGetTimesheetUser.');
             }
             const localVarPath = `/Users/GetTimesheetUser`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -14434,14 +15087,19 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -14458,11 +15116,13 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling usersGetTimesheetUsers.');
             }
             const localVarPath = `/Users/GetTimesheetUsers`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -14473,14 +15133,19 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -14502,11 +15167,13 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
                 throw new RequiredError('request','Required parameter request was null or undefined when calling usersUpdateTimesheetUser.');
             }
             const localVarPath = `/Users/UpdateTimesheetUser`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -14519,16 +15186,26 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -14552,7 +15229,7 @@ export const UsersApiFp = function(configuration?: Configuration) {
         async usersCreateTimesheetUser(xChronosheetsAuth: string, request: InsertUserRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseInsertUserResponse>> {
             const localVarAxiosArgs = await UsersApiAxiosParamCreator(configuration).usersCreateTimesheetUser(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -14567,7 +15244,7 @@ export const UsersApiFp = function(configuration?: Configuration) {
         async usersGetTimesheetUser(userId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseUserForManagement>> {
             const localVarAxiosArgs = await UsersApiAxiosParamCreator(configuration).usersGetTimesheetUser(userId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -14581,7 +15258,7 @@ export const UsersApiFp = function(configuration?: Configuration) {
         async usersGetTimesheetUsers(xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListUserForManagement>> {
             const localVarAxiosArgs = await UsersApiAxiosParamCreator(configuration).usersGetTimesheetUsers(xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -14596,7 +15273,7 @@ export const UsersApiFp = function(configuration?: Configuration) {
         async usersUpdateTimesheetUser(xChronosheetsAuth: string, request: UpdateUserRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseUpdateUserResponse>> {
             const localVarAxiosArgs = await UsersApiAxiosParamCreator(configuration).usersUpdateTimesheetUser(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -14712,7 +15389,6 @@ export class UsersApi extends BaseAPI {
     public usersUpdateTimesheetUser(xChronosheetsAuth: string, request: UpdateUserRequest, options?: any) {
         return UsersApiFp(this.configuration).usersUpdateTimesheetUser(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
@@ -14740,11 +15416,13 @@ export const UsualHoursApiAxiosParamCreator = function (configuration?: Configur
                 throw new RequiredError('xChronosheetsAuth','Required parameter xChronosheetsAuth was null or undefined when calling usualHoursGetUsualHours.');
             }
             const localVarPath = `/UsualHours/GetUsualHours`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -14759,14 +15437,19 @@ export const UsualHoursApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -14788,11 +15471,13 @@ export const UsualHoursApiAxiosParamCreator = function (configuration?: Configur
                 throw new RequiredError('request','Required parameter request was null or undefined when calling usualHoursSetUsualHours.');
             }
             const localVarPath = `/UsualHours/SetUsualHours`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
+
             const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
@@ -14805,16 +15490,26 @@ export const UsualHoursApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
+            const queryParameters = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                queryParameters.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                queryParameters.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(queryParameters)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof request !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(request !== undefined ? request : {}) : (request || "");
+            const nonString = typeof request !== 'string';
+            const needsSerialization = nonString && configuration && configuration.isJsonMime
+                ? configuration.isJsonMime(localVarRequestOptions.headers['Content-Type'])
+                : nonString;
+            localVarRequestOptions.data =  needsSerialization
+                ? JSON.stringify(request !== undefined ? request : {})
+                : (request || "");
 
             return {
-                url: globalImportUrl.format(localVarUrlObj),
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
                 options: localVarRequestOptions,
             };
         },
@@ -14838,7 +15533,7 @@ export const UsualHoursApiFp = function(configuration?: Configuration) {
         async usualHoursGetUsualHours(userId: number, xChronosheetsAuth: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseListUsualHoursDay>> {
             const localVarAxiosArgs = await UsualHoursApiAxiosParamCreator(configuration).usualHoursGetUsualHours(userId, xChronosheetsAuth, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -14853,7 +15548,7 @@ export const UsualHoursApiFp = function(configuration?: Configuration) {
         async usualHoursSetUsualHours(xChronosheetsAuth: string, request: SetUsualHoursRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponseBoolean>> {
             const localVarAxiosArgs = await UsualHoursApiAxiosParamCreator(configuration).usualHoursSetUsualHours(xChronosheetsAuth, request, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: (configuration?.basePath || basePath) + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -14923,7 +15618,6 @@ export class UsualHoursApi extends BaseAPI {
     public usualHoursSetUsualHours(xChronosheetsAuth: string, request: SetUsualHoursRequest, options?: any) {
         return UsualHoursApiFp(this.configuration).usualHoursSetUsualHours(xChronosheetsAuth, request, options).then((request) => request(this.axios, this.basePath));
     }
-
 }
 
 
